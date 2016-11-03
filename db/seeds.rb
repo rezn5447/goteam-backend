@@ -11,9 +11,9 @@
 }
 end
 
-sports = { tennis_singles: 2,
-          tennis_doubles: 4,
-          soccer: 22
+sports = { tennis_singles: 1,
+          tennis_doubles: 2,
+          soccer: 11
         }
 
 sports.each do |sport, num_of_players|
