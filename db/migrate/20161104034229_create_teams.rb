@@ -5,6 +5,7 @@ class CreateTeams < ActiveRecord::Migration[5.0]
       t.references :match, foreign_key: true
       t.references :sport, foreign_key: true
       t.integer :score
+      t.boolean :home
 
       t.timestamps
     end

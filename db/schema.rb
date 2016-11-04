@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20161104034404) do
     t.integer  "match_id"
     t.integer  "sport_id"
     t.integer  "score"
+    t.boolean  "home"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_teams_on_match_id", using: :btree
