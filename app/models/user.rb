@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :ratings
-  has_many :teams
+  has_many :userteams
 end

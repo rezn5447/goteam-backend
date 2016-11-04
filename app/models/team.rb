@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  belongs_to :user
   belongs_to :sport
-  belongs_to :competition
+  belongs_to :match
+  has_many :userteams
 end
