@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104002006) do
+ActiveRecord::Schema.define(version: 20161104034404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "competitions", force: :cascade do |t|
+  create_table "matches", force: :cascade do |t|
     t.string   "location"
     t.datetime "date"
+    t.integer  "sport_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["sport_id"], name: "index_matches_on_sport_id", using: :btree
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -34,22 +36,20 @@ ActiveRecord::Schema.define(version: 20161104002006) do
 
   create_table "sports", force: :cascade do |t|
     t.string   "name"
-    t.integer  "number_of_players"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "total_players"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "teams", force: :cascade do |t|
     t.string   "season"
-    t.integer  "user_id"
-    t.integer  "competition_id"
+    t.integer  "match_id"
     t.integer  "sport_id"
-    t.boolean  "win"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["competition_id"], name: "index_teams_on_competition_id", using: :btree
+    t.integer  "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_teams_on_match_id", using: :btree
     t.index ["sport_id"], name: "index_teams_on_sport_id", using: :btree
-    t.index ["user_id"], name: "index_teams_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,9 +77,20 @@ ActiveRecord::Schema.define(version: 20161104002006) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "userteams", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_userteams_on_team_id", using: :btree
+    t.index ["user_id"], name: "index_userteams_on_user_id", using: :btree
+  end
+
+  add_foreign_key "matches", "sports"
   add_foreign_key "ratings", "sports"
   add_foreign_key "ratings", "users"
-  add_foreign_key "teams", "competitions"
+  add_foreign_key "teams", "matches"
   add_foreign_key "teams", "sports"
-  add_foreign_key "teams", "users"
+  add_foreign_key "userteams", "teams"
+  add_foreign_key "userteams", "users"
 end

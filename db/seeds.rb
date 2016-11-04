@@ -27,29 +27,28 @@ addresses.each do |address|
               )
 end
 
-sports = { tennis_singles: 1,
-          tennis_doubles: 2,
-          soccer: 11
+sports = { tennis_singles: 2,
+          tennis_doubles: 4,
+          soccer: 22
         }
 
-sports.each do |sport, num_of_players|
+sports.each do |sport, total_players|
   Sport.create(name: sport,
-               number_of_players: num_of_players
+               total_players: total_players
               )
 end
 
 2.times do
-  Competition.create(location: '123 Main St SF, CA',
+  Match.create(location: '123 Main St SF, CA',
                      date: "2016-11-12 15:00")
 end
 
 4.times do |num|
   Team.create(
-    user_id: num + 1,
     sport_id: rand(1..2),
-    competition_id:rand(1..2),
+    match_id:rand(1..2),
     season: "Fall 2016",
-    win: true
+    score: 2
     )
 end
 
