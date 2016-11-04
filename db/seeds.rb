@@ -8,18 +8,18 @@ addresses = [
         {street: '1979 Fairbanks Street', city: 'San Leandro', state: 'CA', zip: '94577'},
         {street: '2092 W Ave 133rd', city: 'San Leandro', state: 'CA', zip: '94577'},
         {street: '1481 9th St', city: 'Oakland', state: 'CA', zip: '94607'},
-        {street: '1098 Sutter St', city: 'San Francisco', state: "CA", "94109"}
+        {street: '1098 Sutter St', city: 'San Francisco', state: "CA", zip: "94109"}
 
         ]
 
 # 10 Addresses = 10 Users
-addresses.each do
+addresses.each do |address|
   User.create(first_name: Faker::Name.first_name,
               last_name: Faker::Name.last_name,
-              street: street,
-              city: city,
-              state: state,
-              zip: zip,
+              street: address[:street],
+              city: address[:city],
+              state: address[:state],
+              zip: address[:zip],
               email: Faker::Internet.email,
               phone: Faker::PhoneNumber.phone_number,
               password: "password",
@@ -34,7 +34,7 @@ sports = { tennis_singles: 1,
 
 sports.each do |sport, num_of_players|
   Sport.create(name: sport,
-               num_of_players: num_of_players
+               number_of_players: num_of_players
               )
 end
 
@@ -44,9 +44,10 @@ end
 end
 
 4.times do |num|
-  Competition.first.teams.create(
+  Team.create(
     user_id: num + 1,
-    team_id: rand(1..2),
+    sport_id: rand(1..2),
+    competition_id:rand(1..2),
     season: "Fall 2016",
     win: true
     )

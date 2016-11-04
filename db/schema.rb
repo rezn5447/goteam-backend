@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20161104002006) do
     t.integer  "user_id"
     t.integer  "competition_id"
     t.integer  "sport_id"
-    t.boolean  "result"
+    t.boolean  "win"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["competition_id"], name: "index_teams_on_competition_id", using: :btree
