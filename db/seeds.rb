@@ -48,6 +48,7 @@ end
     user_id: num + 1,
     team_id: rand(1..2),
     season: "Fall 2016",
+    win: true
     )
 end
 
