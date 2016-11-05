@@ -6,10 +6,12 @@ class User < ApplicationRecord
   has_many :userteams
   has_many :actives
 
+  before_save :generate_token
+
   validates :email, :password_hash, :first_name, :last_name, :street, :city, :state, :zip, :phone, presence: true
   validates :email, :password_hash, uniqueness: true
+  validates :token, uniqueness: true
 
-  before_save :generate_token
 
   include BCrypt
 
