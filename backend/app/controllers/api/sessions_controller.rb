@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
   def create
     respond_to do |format|
       user = User.authenticate(user_params[:email],user_params[:password])
-      if user && find_token?(cookies[:token],user)
+      if user
         format.html {render json: pass_user_params(user)}
         format.json {render json: pass_user_params(user)}
       else

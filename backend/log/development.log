@@ -9188,3 +9188,324 @@ puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
 Started GET "/api/sessions" for 127.0.0.1 at 2016-11-05 15:42:41 -0700
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Started GET "/api/sessions" for 127.0.0.1 at 2016-11-05 15:42:55 -0700
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/sessions?user={email:%20%22fae@pourospagac.name%22,password:%20%22password%22}" for 127.0.0.1 at 2016-11-05 15:49:20 -0700
+Started POST "/api/sessions?user={email:%20%22fae@pourospagac.name%22,password:%20%22password%22}" for 127.0.0.1 at 2016-11-05 15:49:27 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{email: \"fae@pourospagac.name\",password: \"password\"}"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 20ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user={email:%20%22fae@pourospagac.name%22,password:%20%22password%22}" for 127.0.0.1 at 2016-11-05 15:51:08 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{email: \"fae@pourospagac.name\",password: \"password\"}"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user={email:%20%22fae@pourospagac.name%22,password:%20%22password%22}" for 127.0.0.1 at 2016-11-05 15:51:22 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{email: \"fae@pourospagac.name\",password: \"password\"}"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user={email:%20%22fae@pourospagac.name%22,password:%20%22password%22}" for 127.0.0.1 at 2016-11-05 15:52:19 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{email: \"fae@pourospagac.name\",password: \"password\"}"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user:{email:%20%22fae@pourospagac.name%22,password:%20%22password%22}" for 127.0.0.1 at 2016-11-05 15:52:53 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user:{email: \"fae@pourospagac.name\",password: \"password\"}"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user:{email:%20%22fae@pourospagac.name%22,password:%20%22password%22}" for 127.0.0.1 at 2016-11-05 15:52:53 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user:{email: \"fae@pourospagac.name\",password: \"password\"}"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user:{email:%20%22fae@pourospagac.name%22,password:%20%22password%22}" for 127.0.0.1 at 2016-11-05 15:52:53 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user:{email: \"fae@pourospagac.name\",password: \"password\"}"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 15:53:41 -0700
+Processing by Api::SessionsController#create as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 15:54:14 -0700
+Processing by Api::SessionsController#create as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 15:54:50 -0700
+Processing by Api::SessionsController#create as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/sessions" for 127.0.0.1 at 2016-11-05 15:55:05 -0700
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 15:56:16 -0700
+Processing by Api::SessionsController#create as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 15:56:37 -0700
+Processing by Api::SessionsController#create as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 15:58:36 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::SessionsController#create as */*
+Completed 400 Bad Request in 36ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:00:53 -0700
+Processing by Api::SessionsController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user={{%22email%22:%22fae@pourospagac.name%22,%20%22password%22:%22password%22}" for 127.0.0.1 at 2016-11-05 16:02:42 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{{\"email\":\"fae@pourospagac.name\", \"password\":\"password\"}"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user={%22email%22:%22fae@pourospagac.name%22,%20%22password%22:%22password%22}" for 127.0.0.1 at 2016-11-05 16:02:46 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{\"email\":\"fae@pourospagac.name\", \"password\":\"password\"}"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user={email:%22fae@pourospagac.name%22,%20%22password%22:%22password%22}" for 127.0.0.1 at 2016-11-05 16:03:29 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{email:\"fae@pourospagac.name\", \"password\":\"password\"}"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user={email:%20fae@pourospagac.name,%20password:%20password}" for 127.0.0.1 at 2016-11-05 16:03:51 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{email: fae@pourospagac.name, password: password}"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions?user%01:{email:%20fae@pourospagac.name,%20password:%20password}" for 127.0.0.1 at 2016-11-05 16:04:53 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user\u0001:{email: fae@pourospagac.name, password: password}"=>"[FILTERED]"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions/user%01:%7Bemail:%20fae@pourospagac.name,%20password:%20password%7D" for 127.0.0.1 at 2016-11-05 16:05:09 -0700
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:07:27 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{email:\"fae@pourospagac.name\", \"password\":\"password\"}"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:08:41 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"------WebKitFormBoundaryt85QrkxC9POLQNcN\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n{email:\"fae@pourospagac.name\", \"password\":\"password\"}\r\n------WebKitFormBoundaryt85QrkxC9POLQNcN--\r\n"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:09:05 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"\"user\":{email:\"fae@pourospagac.name\", \"password\":\"password\"}"=>"[FILTERED]"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:09:22 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user:{email:\"fae@pourospagac.name\", \"password\":\"password\"}"=>"[FILTERED]"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:09:43 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user:{email:fae@pourospagac.name,password:password}"=>"[FILTERED]"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:10:07 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+user:{email:fae@pourospagac.name,password:password}
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:10:31 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+user:{email:"fae@pourospagac.name",password:"password"}
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:10:40 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+"user":{email:"fae@pourospagac.name",password:"password"}
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:10:56 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+"user":{"email":"fae@pourospagac.name","password":"password"}
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:11:19 -0700
+Processing by Api::SessionsController#create as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:11:31 -0700
+Processing by Api::SessionsController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:11:43 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+"user":{"email":"fae@pourospagac.name","password":"password"}
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:12:39 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+"user"=>{"email"=>"fae@pourospagac.name","password"=>"password"}
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:13:29 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+""user"=>{"email"=>"fae@pourospagac.name","password"=>"password"}"
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:14:09 -0700
+Processing by Api::SessionsController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:15:01 -0700
+Processing by Api::SessionsController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:15:18 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>""}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:15:27 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"email"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:15:58 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"email =>\"fae@pourospagac.name\""}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:16:38 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"\"email \"=>\"fae@pourospagac.name\""}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:16:55 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"email =>\"fae@pourospagac.name\""}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:17:21 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"email =>\"fae@pourospagac.name\""}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:17:32 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"email =>\"fae@pourospagac.name\""}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:18:11 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"email =>\"fae@pourospagac.name\""}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:19:02 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>"{email =>\"fae@pourospagac.name\"}"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:22:37 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+"user"=>{"email"=>"fae@pourospagac.name","password"=>"password"}
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:23:45 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{"user"=>{"email"=>"fae@pourospagac.name","password"=>"password"}}
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:24:36 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{user:{email:"fae@pourospagac.name",password:"password"}}
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:26:24 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fae@pourospagac.name"], ["LIMIT", 1]]
+Completed 200 OK in 466ms (Views: 0.3ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:28:15 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fae@pourospagac.name"], ["LIMIT", 1]]
+Completed 200 OK in 103ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:28:49 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fae@pourospagac.name"], ["LIMIT", 1]]
+Completed 200 OK in 127ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:31:12 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fae@pourospagac.name"], ["LIMIT", 1]]
+Completed 200 OK in 103ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:32:20 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fae@pourospagac.name"], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 0.3ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/api/sessions" for 127.0.0.1 at 2016-11-05 16:32:45 -0700
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"fae@pourospagac.name", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fae@pourospagac.name"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
