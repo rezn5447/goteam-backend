@@ -4,8 +4,10 @@ class Api::UsersController < ApplicationController
     user = User.new(user_params)
     respond_to do |format|
       if user.save
+        format.html {render json: pass_user_params(user)}
         format.json {render json: pass_user_params(user)}
       else
+        format.html {render json: user.errors.full_messages}
         format.json {render json: user.errors.full_messages}
       end
     end
@@ -14,7 +16,7 @@ class Api::UsersController < ApplicationController
   def show
     respond_to do |format|
       user = User.find(params[:id]) if User.exists?(params[:user][:id])
-      if user
+      if user && find_token?(cookies[:token],user)
         format.html {render json: pass_user_params(user)}
         format.json {render json: pass_user_params(user)}
       else
