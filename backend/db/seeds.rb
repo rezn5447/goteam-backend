@@ -23,11 +23,8 @@ addresses.each do |address|
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.phone_number,
     password: "password",
-    active: true
     )
 end
-
-
 
 Sport.create(name: "tennis",
  total_players: 2
@@ -84,6 +81,10 @@ Userteam.create(
   team_id:2
   )
 
+Active.create(status: true , user_id:1, sport_id:1)
+Active.create(status: true , user_id:2, sport_id:1)
+Active.create(status: true , user_id:1, sport_id:2)
+Active.create(status: true , user_id:2, sport_id:2)
 
 
 

@@ -2,8 +2,8 @@ class CreateTeams < ActiveRecord::Migration[5.0]
   def change
     create_table :teams do |t|
       t.string :season
-      t.references :match, foreign_key: true
-      t.references :sport, foreign_key: true
+      t.references :match
+      t.references :sport
       t.integer :score
       t.boolean :home
 
