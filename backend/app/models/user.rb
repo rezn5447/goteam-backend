@@ -4,6 +4,10 @@ class User < ApplicationRecord
 
   has_many :ratings
   has_many :userteams
+
+  validates :email, :password_hash, :first_name, :last_name, :street, :city, :state, :zip, :phone, presence: true
+  validates :email, :password_hash, uniquessness: true
+
   before_save :generate_token
 
   include BCrypt
