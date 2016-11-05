@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :ratings
   has_many :userteams
+  has_many :actives
 
   validates :email, :password_hash, :first_name, :last_name, :street, :city, :state, :zip, :phone, presence: true
   validates :email, :password_hash, uniqueness: true

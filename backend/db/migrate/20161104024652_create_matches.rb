@@ -3,7 +3,7 @@ class CreateMatches < ActiveRecord::Migration[5.0]
     create_table :matches do |t|
       t.string :location
       t.datetime :date
-      t.references :sport, foreign_key: true
+      t.references :sport
 
       t.timestamps
     end

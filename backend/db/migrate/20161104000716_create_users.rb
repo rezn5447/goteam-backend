@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :city, null: false
       t.string :state, null: false
       t.integer :zip, null: false
-      t.boolean :active, null: false, default: false
       t.string :phone, null: false
       t.text :token, null: false, uniquessness: true
 
