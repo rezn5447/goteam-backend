@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
     user = User.new(user_params)
     respond_to do |format|
       if user.save
-        format.json {render json: user}
+        format.json {render json: pass_user_params(user)}
       else
         format.json {render json: user.errors.full_messages}
       end
@@ -15,8 +15,8 @@ class Api::UsersController < ApplicationController
     respond_to do |format|
       user = User.find(params[:id]) if User.exists?(params[:id])
       if user
-        format.html {render json: user}
-        format.json {render json: user}
+        format.html {render json: pass_user_params(user)}
+        format.json {render json: pass_user_params(user)}
       else
         format.html {render json: {message: "User does not exist"}}
         format.json {render json: {message:"User does not exist"}}
