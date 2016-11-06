@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105031421) do
+ActiveRecord::Schema.define(version: 20161106000057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "actives", force: :cascade do |t|
-    t.boolean  "status",     default: false, null: false
-    t.integer  "user_id"
-    t.integer  "sport_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.index ["sport_id"], name: "index_actives_on_sport_id", using: :btree
-    t.index ["user_id"], name: "index_actives_on_user_id", using: :btree
-  end
 
   create_table "matches", force: :cascade do |t|
     t.string   "location"
@@ -34,21 +24,23 @@ ActiveRecord::Schema.define(version: 20161105031421) do
     t.index ["sport_id"], name: "index_matches_on_sport_id", using: :btree
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "sport_id"
-    t.integer  "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["sport_id"], name: "index_ratings_on_sport_id", using: :btree
-    t.index ["user_id"], name: "index_ratings_on_user_id", using: :btree
-  end
-
   create_table "sports", force: :cascade do |t|
     t.string   "name"
     t.integer  "total_players"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.integer  "user_id",                    null: false
+    t.integer  "sport_id",                   null: false
+    t.integer  "rating",     default: 50
+    t.integer  "win",        default: 0
+    t.boolean  "active",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["sport_id"], name: "index_states_on_sport_id", using: :btree
+    t.index ["user_id"], name: "index_states_on_user_id", using: :btree
   end
 
   create_table "teams", force: :cascade do |t|
