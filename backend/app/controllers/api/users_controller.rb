@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
 
   def show
     respond_to do |format|
-      user = user_exist?("gldn",params[:id])
+      user = user_exist?(cookies[:token],params[:id])
       if user
         format.html {render json: pass_user_params(user)}
         format.json {render json: pass_user_params(user)}
