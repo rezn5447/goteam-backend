@@ -1,6 +1,6 @@
-class CreateStates < ActiveRecord::Migration[5.0]
+class CreateStats < ActiveRecord::Migration[5.0]
 	def change
-		create_table :states do |t|
+		create_table :stats do |t|
 			t.references :user, null:false
 			t.references :sport, null:false
 			t.integer :rating, default: 50
