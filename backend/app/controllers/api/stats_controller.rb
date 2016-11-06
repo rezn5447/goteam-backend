@@ -2,7 +2,8 @@ class Api::StatsController < ApplicationController
 
 	def index
 		respond_to do |format|
-			user = user_exist?("jgbCP2MuzW5yAPkGGWEmzQ",params[:user_id])
+			# user = user_exist?("IxTniH0SmMe9mqkCQOvjuQ",params[:user_id])
+			user = User.find(params[:user_id])
 			if user
 				stat = user.stats
 				format.html {render json: stat}
@@ -16,7 +17,8 @@ class Api::StatsController < ApplicationController
 
 	def create
 		respond_to do |format|
-			user = user_exist?("jgbCP2MuzW5yAPkGGWEmzQ",params[:user_id])
+			# user = user_exist?("IxTniH0SmMe9mqkCQOvjuQ",params[:user_id])
+			user = User.find(params[:user_id])
 			stat = Stat.new(user_id:params[:user_id],sport_id: params[:sport_id], active: true)
 			if user && stat.save
 				format.html {render json: stat}
@@ -30,7 +32,8 @@ class Api::StatsController < ApplicationController
 
 	def update
 		respond_to do |format|
-			user = user_exist?("jgbCP2MuzW5yAPkGGWEmzQ",params[:user_id])
+			# user = user_exist?("IxTniH0SmMe9mqkCQOvjuQ",params[:user_id])
+			user = User.find(params[:user_id])
 			if user
 				stat = Stat.find(params[:id])
 				if stat				
