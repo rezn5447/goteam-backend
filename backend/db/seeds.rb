@@ -36,17 +36,6 @@ Sport.create(name: "soccer",
  total_players: 22
  )
 
-Rating.create(
-  user_id:1,
-  sport_id:1,
-  rating:50
-  )
-
-Rating.create(
-  user_id:2,
-  sport_id:1,
-  rating:60
-  )
 
 4.times do
   Match.create(location: '123 Main St SF, CA',
@@ -81,10 +70,10 @@ Userteam.create(
   team_id:2
   )
 
-Active.create(status: true , user_id:1, sport_id:1)
-Active.create(status: true , user_id:2, sport_id:1)
-Active.create(status: true , user_id:1, sport_id:2)
-Active.create(status: true , user_id:2, sport_id:2)
+State.create(active: true , user_id:1, sport_id:1, win:1 )
+State.create(active: true , user_id:2, sport_id:1, win:2 )
+State.create(active: true , user_id:3, sport_id:2, win:3 )
+State.create(active: true , user_id:4, sport_id:2, win:4 )
 
 
 

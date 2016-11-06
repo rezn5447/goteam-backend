@@ -2,9 +2,8 @@ require 'bcrypt'
 
 class User < ApplicationRecord
 
-  has_many :ratings
+  has_many :states
   has_many :userteams
-  has_many :actives
 
   before_save :generate_token
 
