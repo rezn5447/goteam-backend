@@ -28,4 +28,24 @@ class Api::StatsController < ApplicationController
 		end	
 	end
 
+	def update
+		respond_to do |format|
+			user = user_exist?("jgbCP2MuzW5yAPkGGWEmzQ",params[:user_id])
+			if user
+				stat = Stat.find(params[:id])
+				if stat				
+					update_stat(params,stat)
+					format.html {render json: stat}
+					format.json {render json: stat}
+				else
+					format.html {render json: {message: "User's stat does not exist"}}
+					format.json {render json: {message: "User's stat does not exist"}}
+				end
+			else
+				format.html {render json: {message: "User does not exist"}}
+				format.json {render json: {message:"User does not exist"}}
+			end
+		end
+	end
+
 end
