@@ -9760,3 +9760,388 @@ ORDER BY c.conname
   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
   [1m[36mState Load (0.5ms)[0m  [1m[34mSELECT  "states".* FROM "states" WHERE "states"."user_id" = $1 ORDER BY "states"."id" ASC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
   [1m[36mSport Load (0.6ms)[0m  [1m[34mSELECT  "sports".* FROM "sports" WHERE "sports"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:36:38 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:36:51 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:36:54 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:37:35 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:37:54 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 0.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:38:04 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 0.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/users/30" for 127.0.0.1 at 2016-11-05 17:38:12 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/30" for 127.0.0.1 at 2016-11-05 17:39:04 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+Completed 404 Not Found in 17ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:39:12 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:39:34 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:40:49 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:40:52 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:41:07 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:42:38 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:44:37 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:46:40 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/users/30" for 127.0.0.1 at 2016-11-05 17:46:56 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/30" for 127.0.0.1 at 2016-11-05 17:48:06 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2016-11-05 17:48:09 -0700
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (395.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "goteam_development"[0m
+  [1m[35m (328.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "goteam_test"[0m
+  [1m[35m (1021.8ms)[0m  [1m[35mCREATE DATABASE "goteam_development" ENCODING = 'unicode'[0m
+  [1m[35m (692.0ms)[0m  [1m[35mCREATE DATABASE "goteam_test" ENCODING = 'unicode'[0m
+  [1m[35m (198.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (131.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(681077607220088400);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161104000716)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (143.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "password_hash" character varying DEFAULT '' NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "street" character varying NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "zip" integer NOT NULL, "phone" character varying NOT NULL, "token" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (24.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161104000716"]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSports (20161104000827)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (89.4ms)[0m  [1m[35mCREATE TABLE "sports" ("id" serial primary key, "name" character varying, "total_players" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161104000827"]]
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMatches (20161104024652)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (122.3ms)[0m  [1m[35mCREATE TABLE "matches" ("id" serial primary key, "location" character varying, "date" timestamp, "sport_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (41.9ms)[0m  [1m[35mCREATE  INDEX  "index_matches_on_sport_id" ON "matches"  ("sport_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161104024652"]]
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeams (20161104034229)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (101.8ms)[0m  [1m[35mCREATE TABLE "teams" ("id" serial primary key, "season" character varying, "match_id" integer, "sport_id" integer, "score" integer, "home" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (64.8ms)[0m  [1m[35mCREATE  INDEX  "index_teams_on_match_id" ON "teams"  ("match_id")[0m
+  [1m[35m (42.5ms)[0m  [1m[35mCREATE  INDEX  "index_teams_on_sport_id" ON "teams"  ("sport_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161104034229"]]
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserteams (20161104034404)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (59.0ms)[0m  [1m[35mCREATE TABLE "userteams" ("id" serial primary key, "user_id" integer, "team_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (99.9ms)[0m  [1m[35mCREATE  INDEX  "index_userteams_on_user_id" ON "userteams"  ("user_id")[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE  INDEX  "index_userteams_on_team_id" ON "userteams"  ("team_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161104034404"]]
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStats (20161106000057)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (60.8ms)[0m  [1m[35mCREATE TABLE "stats" ("id" serial primary key, "user_id" integer NOT NULL, "sport_id" integer NOT NULL, "rating" integer DEFAULT 50, "win" integer DEFAULT 0, "active" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCREATE  INDEX  "index_stats_on_user_id" ON "stats"  ("user_id")[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCREATE  INDEX  "index_stats_on_sport_id" ON "stats"  ("sport_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161106000057"]]
+  [1m[35m (32.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-11-06 01:08:14 UTC], ["updated_at", 2016-11-06 01:08:14 UTC]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(681077607220088400)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'matches'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'sports'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'stats'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'teams'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'userteams'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "presley@ankundinggreenfelder.net"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$io3a.c7hAuOu1edRXA3tUe96Q/zdCiYIej0/lL7rHngWwo9JANwrS"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "jgbCP2MuzW5yAPkGGWEmzQ"], ["LIMIT", 1]]
+  [1m[35mSQL (15.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "presley@ankundinggreenfelder.net"], ["password_hash", "$2a$10$io3a.c7hAuOu1edRXA3tUe96Q/zdCiYIej0/lL7rHngWwo9JANwrS"], ["first_name", "Nicolette"], ["last_name", "Wolf"], ["street", "1515 Sutter St"], ["city", "San Francisco"], ["state", "CA"], ["zip", 94109], ["phone", "256-221-5860 x437"], ["token", "jgbCP2MuzW5yAPkGGWEmzQ"], ["created_at", 2016-11-06 01:08:15 UTC], ["updated_at", 2016-11-06 01:08:15 UTC]]
+  [1m[35m (27.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "porter_walker@okon.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$S3.lumM7xbZITB6XtA1nUOnmMq7JZ5TzcBGZg5dlbCc8N/fgKDSay"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "5EltXqGZFh-LOBzmcTyLPg"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "porter_walker@okon.io"], ["password_hash", "$2a$10$S3.lumM7xbZITB6XtA1nUOnmMq7JZ5TzcBGZg5dlbCc8N/fgKDSay"], ["first_name", "Rosalyn"], ["last_name", "Kozey"], ["street", "332 17th Ave"], ["city", "San Francisco"], ["state", "CA"], ["zip", 94121], ["phone", "570.280.5226"], ["token", "5EltXqGZFh-LOBzmcTyLPg"], ["created_at", 2016-11-06 01:08:15 UTC], ["updated_at", 2016-11-06 01:08:15 UTC]]
+  [1m[35m (22.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cristian@durgan.name"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$JrTkRcpycvXmFp.VeVbAI.Cp.dIGF0L2bCaiQ1j6qhJi8Yx0CeV8a"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "_x2TzPn39vlflaZBm3BoSQ"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "cristian@durgan.name"], ["password_hash", "$2a$10$JrTkRcpycvXmFp.VeVbAI.Cp.dIGF0L2bCaiQ1j6qhJi8Yx0CeV8a"], ["first_name", "Emmanuel"], ["last_name", "Kreiger"], ["street", "138 Palm Avenue"], ["city", "San Francisco"], ["state", "CA"], ["zip", 94118], ["phone", "1-966-689-5622 x76588"], ["token", "_x2TzPn39vlflaZBm3BoSQ"], ["created_at", 2016-11-06 01:08:15 UTC], ["updated_at", 2016-11-06 01:08:15 UTC]]
+  [1m[35m (54.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "myriam@bradtkehagenes.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$uO.I2/Zg6oNdOcaAtKMyxuyWGdEsImiZzTJ15NzdW2C0E7hQagKRC"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "-b1Y8KPiRc0nB60GBDuiJw"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "myriam@bradtkehagenes.io"], ["password_hash", "$2a$10$uO.I2/Zg6oNdOcaAtKMyxuyWGdEsImiZzTJ15NzdW2C0E7hQagKRC"], ["first_name", "Alexandrine"], ["last_name", "Stoltenberg"], ["street", "2775 Union Street"], ["city", "San Francisco"], ["state", "CA"], ["zip", 94123], ["phone", "155-977-6085"], ["token", "-b1Y8KPiRc0nB60GBDuiJw"], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (19.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rosendo_blanda@kohlermacejkovic.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$0grIpyQ2tnVp/4gwCsIXwO.NDvwHvS8v8cAgwHwQNFfjXWVn4L542"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "kMuf5eS54PQiPDj7-_x-aA"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "rosendo_blanda@kohlermacejkovic.io"], ["password_hash", "$2a$10$0grIpyQ2tnVp/4gwCsIXwO.NDvwHvS8v8cAgwHwQNFfjXWVn4L542"], ["first_name", "Beulah"], ["last_name", "Hartmann"], ["street", "475 Belvedere Street"], ["city", "San Francisco"], ["state", "CA"], ["zip", 94117], ["phone", "516-858-0311 x9058"], ["token", "kMuf5eS54PQiPDj7-_x-aA"], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nyasia.yost@bosco.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$Og.3AQw74cfxyr8V1ppbWu6oVV0Lj6jSrK4HK5evAHLx8OkFZw7Sa"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "cvLyPQ2RzPAaJA_2ds1Tpw"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "nyasia.yost@bosco.com"], ["password_hash", "$2a$10$Og.3AQw74cfxyr8V1ppbWu6oVV0Lj6jSrK4HK5evAHLx8OkFZw7Sa"], ["first_name", "Christelle"], ["last_name", "Dietrich"], ["street", "3975 20th Street"], ["city", "San Francisco"], ["state", "CA"], ["zip", 94114], ["phone", "630-075-6969 x6877"], ["token", "cvLyPQ2RzPAaJA_2ds1Tpw"], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "loma@stark.info"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$pK5vxhafbJEbYBZa243.pOXTJFhuseacweVT.hzSkD.alsMWmPQ62"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "pbMYc8srz3Sxux2aFpR5Zg"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "loma@stark.info"], ["password_hash", "$2a$10$pK5vxhafbJEbYBZa243.pOXTJFhuseacweVT.hzSkD.alsMWmPQ62"], ["first_name", "Mario"], ["last_name", "O'Reilly"], ["street", "1979 Fairbanks Street"], ["city", "San Leandro"], ["state", "CA"], ["zip", 94577], ["phone", "1-774-606-5618 x66403"], ["token", "pbMYc8srz3Sxux2aFpR5Zg"], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aleandra_kertzmann@schillercrona.info"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$rONdc6GtUpn87y/ImisiQObj7NU/sYE9u8xQ6eQIDP3BHQDu6px5y"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "8vt9rmLZjlzztjF3Nfn_7Q"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "aleandra_kertzmann@schillercrona.info"], ["password_hash", "$2a$10$rONdc6GtUpn87y/ImisiQObj7NU/sYE9u8xQ6eQIDP3BHQDu6px5y"], ["first_name", "Barney"], ["last_name", "Tromp"], ["street", "2092 W Ave 133rd"], ["city", "San Leandro"], ["state", "CA"], ["zip", 94577], ["phone", "242-975-4712"], ["token", "8vt9rmLZjlzztjF3Nfn_7Q"], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "davion.harvey@erdman.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$0wQxIQt.g3KoTKTs0usOP.41ik/MxboEjEebzP6VPnewYCoRwRgAO"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "u4JrnDUmoL_keWv3WRESqQ"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "davion.harvey@erdman.io"], ["password_hash", "$2a$10$0wQxIQt.g3KoTKTs0usOP.41ik/MxboEjEebzP6VPnewYCoRwRgAO"], ["first_name", "Seth"], ["last_name", "Schinner"], ["street", "1481 9th St"], ["city", "Oakland"], ["state", "CA"], ["zip", 94607], ["phone", "1-960-103-8048 x3938"], ["token", "u4JrnDUmoL_keWv3WRESqQ"], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "loraine_yundt@halvorsontoy.net"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_hash" = $1 LIMIT $2[0m  [["password_hash", "$2a$10$d6fqflBPYUfORkAFZx9GDesTQDbdVe6kBHNfzw32ABxFNxCNgLhom"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "3RIP5RTtZfzfOLiLLBMTlg"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_hash", "first_name", "last_name", "street", "city", "state", "zip", "phone", "token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "loraine_yundt@halvorsontoy.net"], ["password_hash", "$2a$10$d6fqflBPYUfORkAFZx9GDesTQDbdVe6kBHNfzw32ABxFNxCNgLhom"], ["first_name", "Cecelia"], ["last_name", "Dach"], ["street", "1098 Sutter St"], ["city", "San Francisco"], ["state", "CA"], ["zip", 94109], ["phone", "550.848.0467 x43755"], ["token", "3RIP5RTtZfzfOLiLLBMTlg"], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "sports" ("name", "total_players", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "tennis"], ["total_players", 2], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sports" ("name", "total_players", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "tennis"], ["total_players", 4], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sports" ("name", "total_players", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "soccer"], ["total_players", 22], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "matches" ("location", "date", "sport_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["location", "123 Main St SF, CA"], ["date", 2016-11-12 15:00:00 UTC], ["sport_id", 3], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "matches" ("location", "date", "sport_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["location", "123 Main St SF, CA"], ["date", 2016-11-12 15:00:00 UTC], ["sport_id", 3], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "matches" ("location", "date", "sport_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["location", "123 Main St SF, CA"], ["date", 2016-11-12 15:00:00 UTC], ["sport_id", 2], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "matches" ("location", "date", "sport_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["location", "123 Main St SF, CA"], ["date", 2016-11-12 15:00:00 UTC], ["sport_id", 1], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "teams" ("season", "match_id", "sport_id", "score", "home", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["season", "Fall 2016"], ["match_id", 1], ["sport_id", 1], ["score", 2], ["home", true], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "userteams" ("user_id", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["team_id", 1], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "userteams" ("user_id", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["team_id", 2], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "stats" ("user_id", "sport_id", "win", "active", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["sport_id", 1], ["win", 1], ["active", true], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "stats" ("user_id", "sport_id", "win", "active", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 2], ["sport_id", 1], ["win", 2], ["active", true], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "stats" ("user_id", "sport_id", "win", "active", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 3], ["sport_id", 2], ["win", 3], ["active", true], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "stats" ("user_id", "sport_id", "win", "active", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 4], ["sport_id", 2], ["win", 4], ["active", true], ["created_at", 2016-11-06 01:08:16 UTC], ["updated_at", 2016-11-06 01:08:16 UTC]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
