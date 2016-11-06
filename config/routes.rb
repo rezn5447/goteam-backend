@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   namespace :api, constraints:{format: :json} do
     resources :users, only:[:create, :show] do
     	resources :stats, only:[:create,:update,:index]
+    	resources :teams, only:[:create]
     end
     resources :sessions, only:[:create]
-    resources :sports, only:[:index]
+    resources :sports, only:[:index] do
   end
 end
