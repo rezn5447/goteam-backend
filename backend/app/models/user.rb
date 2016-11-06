@@ -2,7 +2,7 @@ require 'bcrypt'
 
 class User < ApplicationRecord
 
-  has_many :states
+  has_many :stats
   has_many :userteams
 
   before_save :generate_token

@@ -1,5 +1,5 @@
 class Sport < ApplicationRecord
-  has_many :states
+  has_many :stats
   has_many :teams
   has_many :matches
 
