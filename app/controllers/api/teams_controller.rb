@@ -1,6 +1,5 @@
 class Api::TeamsController < ApplicationController
 	def create
-		p "%"*20
 		# user = user_exist?("jgbCP2MuzW5yAPkGGWEmzQ",params[:id])
 		user = User.find(params[:user_id])
 		if user

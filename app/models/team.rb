@@ -5,19 +5,15 @@ class Team < ApplicationRecord
 
   validates :season, :home, presence: true
 
-  def self.shuffle_rand_teams(teams,total,sport_id)
+  def self.shuffle_rand_teams(teams,total)
     teams= teams.shuffle
     team_num = total/2
     {Home:teams[0...team_num],Away:teams[team_num..-1]}
   end
 
-  def self.create_teams(players, home)
+  def self.create_teams(players, home,sport_id)
     season = season?
-    team = Team.new(sport_id:sport_id,Home:home,season:season)
-    if team.save
-
-    else
-    end
+    team = Team.new(sport_id:sport_id,home:home,season:season)
   end
 
   private
