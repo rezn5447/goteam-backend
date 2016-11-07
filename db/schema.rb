@@ -25,8 +25,9 @@ ActiveRecord::Schema.define(version: 20161106000057) do
   end
 
   create_table "sports", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "total_players"
+    t.string   "name",          null: false
+    t.string   "category",      null: false
+    t.integer  "total_players", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
