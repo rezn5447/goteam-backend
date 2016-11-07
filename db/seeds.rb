@@ -26,13 +26,13 @@ addresses.each do |address|
     )
 end
 
-Sport.create(name: "tennis",
- total_players: 2
+Sport.create(category: "Tennis",
+ total_players: 2, name:"Singles"
  )
-Sport.create(name: "tennis",
+Sport.create(category: "Tennis",name:"Doubles",
  total_players: 4
  )
-Sport.create(name: "soccer",
+Sport.create(category: "Soccer",name:"11 vs 11",
  total_players: 22
  )
 
