@@ -12,9 +12,13 @@ module TeamsHelper
 		teams = Team.shuffle_rand_teams(teams,total)
 		match = Match.create_match(sport.id,"1770 Scott St, San Francisco, CA 94115")
 		if match.save
-			p match
-			home = Team.create_teams(teams[:Home],true,sport_id)
-			# away = Team.create_teams(teams[:Away],false,sport_id)
+			home = Team.create_teams(teams[:Home],true,sport.id)
+			away = Team.create_teams(teams[:Away],false,sport.id)
+			if home.save && away.save
+
+			else
+				home.errors.full_messages || away.error.full_messages
+			end
 		else
 			match.error.full_messages
 		end
