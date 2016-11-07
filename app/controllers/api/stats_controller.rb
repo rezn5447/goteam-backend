@@ -5,9 +5,14 @@ class Api::StatsController < ApplicationController
 			# user = user_exist?("IxTniH0SmMe9mqkCQOvjuQ",params[:user_id])
 			user = User.find(params[:user_id])
 			if user
-				stat = user.stats
-				format.html {render json: stat}
-				format.json {render json: stat}
+				stats = user.stats
+				details = {}
+				stats.each do |stat|
+					sport = stat.sport.name
+					details["#{sport}"] = stat
+				end
+				format.html {render json: details}
+				format.json {render json: details}
 			else
 				format.html {render json: "User does not exist"}
 				format.json {render json: "User does not exist"}
@@ -37,7 +42,7 @@ class Api::StatsController < ApplicationController
 			if user
 				stat = user.stats.find(params[:id])
 				if stat				
-					update_stat(params,stat)
+					Stat.update_stat(params,stat)
 					format.html {render json: stat}
 					format.json {render json: stat}
 				else
