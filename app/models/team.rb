@@ -19,6 +19,6 @@ class Team < ApplicationRecord
   private
 
   def self.assign_rand_teams(teams)
-  	if
+  	
   end
 end
