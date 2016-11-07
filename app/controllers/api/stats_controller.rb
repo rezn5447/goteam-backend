@@ -8,8 +8,11 @@ class Api::StatsController < ApplicationController
 				stats = user.stats
 				details = {}
 				stats.each do |stat|
-					sport = stat.sport.name
-					details["#{sport}"] = stat
+					sport = stat.sport
+					p "^"*20
+					p sport.total_players
+					details["#{sport.name}"] = [stat,{total:sport.total_players}]
+					p details
 				end
 				format.html {render json: details}
 				format.json {render json: details}
