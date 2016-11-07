@@ -9,7 +9,7 @@ class Api::TeamsController < ApplicationController
 			total_players = sport.total_players
 			active_players = sport.stats.where(active:true, division:stat.division)
 			if active_players.count >= total_players
-				assign_players(active_players)
+				p Team.assign_players(active_players,total_players)
 			else
 				p "$"*20
 			end
