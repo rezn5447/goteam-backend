@@ -5,13 +5,13 @@ class Api::TeamsController < ApplicationController
 		user = User.find(params[:user_id])
 		if user
 			stat = user.stats.find_by(sport_id:params[:sport_id])
-			sport = Sport.find(params[:sport_id])
+			sport = stat.sport
 			total_players = sport.total_players
-			active_players = sport.stats.where(active:true, division:user)
+			active_players = sport.stats.where(active:true, division:stat.division)
 			if active_players.count >= total_players
-				p active_players
+				assign_players(active_players)
 			else
-
+				p "$"*20
 			end
 		else
 		end

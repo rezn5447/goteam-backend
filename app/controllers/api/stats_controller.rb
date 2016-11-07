@@ -37,7 +37,7 @@ class Api::StatsController < ApplicationController
 			if user
 				stat = user.stats.find(params[:id])
 				if stat				
-					update_stat(params,stat)
+					Stat.update_stat(params,stat)
 					format.html {render json: stat}
 					format.json {render json: stat}
 				else
