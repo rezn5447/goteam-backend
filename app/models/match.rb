@@ -3,4 +3,8 @@ class Match < ApplicationRecord
   belongs_to :sport
 
   validates :location, presence: true
+
+  def self.create_match(sport_id)
+
+  end
 end
