@@ -13,6 +13,7 @@ module TeamsHelper
 				return result if result!= "success"
 				result = Userteam.join_team(teams[:Home],home)
 				return result if result!= "success"
+				{Home:home,Home_team: teams[:Home],Away:away,Away_team:teams[:Away],match:match}
 			else
 				return home.errors.full_messages if home.errors.full_messages != nil
 				return away.errors.full_messages if away.errors.full_messages != nil
