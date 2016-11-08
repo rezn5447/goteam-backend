@@ -5,7 +5,7 @@ class CreateTeams < ActiveRecord::Migration[5.0]
       t.references :match
       t.references :sport
       t.integer :score
-      t.boolean :home
+      t.string :home
 
       t.timestamps
     end

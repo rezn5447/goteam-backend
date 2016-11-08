@@ -33,8 +33,8 @@ class Api::StatsController < ApplicationController
 			else
 				format.html {render json: stat.errors.full_messages}
 				format.json {render json: stat.errors.full_messages}
-			end		
-		end	
+			end
+		end
 	end
 
 	def update
@@ -43,7 +43,7 @@ class Api::StatsController < ApplicationController
 			user = User.find(params[:user_id])
 			if user
 				stat = user.stats.find(params[:id])
-				if stat				
+				if stat
 					Stat.update_stat(params,stat)
 					format.html {render json: stat}
 					format.json {render json: stat}
@@ -53,7 +53,7 @@ class Api::StatsController < ApplicationController
 				end
 			else
 				format.html {render json: {message: "User does not exist"}}
-				format.json {render json: {message:"User does not exist"}}
+				format.json {render json: {message: "User does not exist"}}
 			end
 		end
 	end

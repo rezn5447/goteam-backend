@@ -11,9 +11,9 @@ class Team < ApplicationRecord
     {Home:teams[0...team_num],Away:teams[team_num..-1]}
   end
 
-  def self.create_teams(players, home,sport_id)
+  def self.create_teams(boo,sport_id,match_id)
     season = season?
-    team = Team.new(sport_id:sport_id,home:home,season:season)
+    team = Team.new(sport_id:sport_id,home:boo,season:season,match_id:match_id)
   end
 
   private

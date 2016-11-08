@@ -10,10 +10,10 @@ class Stat < ApplicationRecord
 
 	def self.update_stat(params,stat)
 		if params.include?("stat")
-			stat.update(active: params[:stat][:active]) if params[:stat].include?("active") && (params[:stat][:active] == true || params[:stat][:active] == false)
+			stat.update(active: params[:stat][:active]) if params[:stat].include?("active") && (params[:stat][:active] == "true" || params[:stat][:active] == "false")
 			stat.update(win: params[:stat][:win]) if params[:stat].include?("win")
 			if params[:stat].include?("rating")
-				stat.update(rating: params[:stat][:rating]) 
+				stat.update(rating: params[:stat][:rating])
 				division = division?(stat)
 				stat.update(division:division)
 			end
