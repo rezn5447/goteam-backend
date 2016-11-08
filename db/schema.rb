@@ -46,13 +46,14 @@ ActiveRecord::Schema.define(version: 20161106000057) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "season",                 null: false
-    t.integer  "match_id",               null: false
-    t.integer  "sport_id",               null: false
-    t.integer  "score",      default: 0, null: false
-    t.string   "home",                   null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "season",                       null: false
+    t.integer  "match_id",                     null: false
+    t.integer  "sport_id",                     null: false
+    t.integer  "score",      default: 0,       null: false
+    t.string   "home",                         null: false
+    t.string   "updated?",   default: "false"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["match_id"], name: "index_teams_on_match_id", using: :btree
     t.index ["sport_id"], name: "index_teams_on_sport_id", using: :btree
   end

@@ -51,7 +51,7 @@ Sport.create(category: "Soccer",name:"11 vs 11",
 4.times do
   Match.create(location: '123 Main St SF, CA',
    date: "2016-11-12 15:00",
-   sport_id: rand(1..3))
+   sport_id: 1)
 end
 
 

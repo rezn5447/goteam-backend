@@ -20,19 +20,22 @@ class Team < ApplicationRecord
     team = Team.new(sport_id:sport_id,home:boo,season:season,match_id:match_id)
   end
 
-  def self.update_match_rating(side,point)
+  def self.update_match_rating(side,point,sport_id)
     userteams = side.userteams
     userteams.each do |userteam|
-      stat = userteam.user.stat
+      stat = userteam.user.stats.find_by(sport_id:sport_id)
       update_rating = stat.rating + point
       stat.rating = update_rating
-      stat.save
-      return stat.errors.full_messages if stat.errors.full_messages != nil
+      if stat.save
+        side.update(updated?:"true")
+      else
+        return stat.errors.full_messages
+      end
     end
   end
 
   def self.calculate_rating(home,away)
-    if home.score > away.core
+    if home.score > away.score
       {home: 2, away: -2}
     elsif home.score < away.score
       {home: -2, away: 2}

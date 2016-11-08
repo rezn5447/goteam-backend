@@ -6,6 +6,7 @@ class CreateTeams < ActiveRecord::Migration[5.0]
       t.references :sport, null: false
       t.integer :score, default: 0, null: false
       t.string :home, null: false
+      t.string :updated? , default:"false"
 
       t.timestamps
     end

@@ -51,24 +51,31 @@ class Api::MatchesController < ApplicationController
           format.json {render json: "User does not exist"}
         end
       end
-  end
+    end
 
-  def update
-    respond_to do |format|
+    def update
+      respond_to do |format|
       # user = user_exist?("IxTniH0SmMe9mqkCQOvjuQ",params[:user_id])
       user = User.find(params[:user_id])
       if user
         match = Match.find(params[:id])
         if match
-          teams = Match.teams
+          sport_id = match.sport.id
+          teams = match.teams
           home = teams.find_by(home:"true")
           away = teams.find_by(home:"false")
-          points = Team.calculate_rating(home,away)
-          Team.update_match_rating(home,points[:home])
-          Team.update_match_rating(away,points[:away])
-          format.html {render json: user.stat}
-          format.js {render json: user.stat}
-          format.json {render json: user.stat}
+          if home.updated? == "false" && away.updated? == "false"
+            points = Team.calculate_rating(home,away)
+            Team.update_match_rating(home,points[:home],sport_id)
+            Team.update_match_rating(away,points[:away],sport_id)
+            format.html {render json: user.stats.find_by(sport_id:sport_id)}
+            format.js {render json: user.stats.find_by(sport_id:sport_id)}
+            format.json {render json: user.stats.find_by(sport_id:sport_id)}
+          else
+            format.html {render json: "Scores has already been updated."}
+            format.js {render json: "Scores has already been updated."}
+            format.json {render json: "Scores has already been updated."}
+          end
         else
           format.html {render json: "Match does not exist"}
           format.js {render json: "Match does not exist"}
