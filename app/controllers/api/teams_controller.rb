@@ -11,10 +11,12 @@ class Api::TeamsController < ApplicationController
 				assign_players(active_players,total_players,sport)
 			else
 				format.html {render json: {message: "Not enough players, please wait."}}
+				format.js {render json: {message: "Not enough players, please wait."}}
 				format.json {render json: {message: "Not enough players, please wait."}}
 			end
 		else
 				format.html {render json: {message: "User does not exist"}}
+				format.js {render json: {message: "User does not exist"}}
 				format.json {render json: {message: "User does not exist"}}
 		end
 	end

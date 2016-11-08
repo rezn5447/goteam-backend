@@ -12,6 +12,17 @@ addresses = [
 
 ]
 
+User.create(first_name: "Fuck",
+    last_name: "you",
+    street: address[:street],
+    city: address[:city],
+    state: address[:state],
+    zip: address[:zip],
+    email: "1@1.com",
+    phone: Faker::PhoneNumber.phone_number,
+    password: "1",
+    )
+
 # 10 Addresses = 10 Users
 addresses.each do |address|
   User.create(first_name: Faker::Name.first_name,
