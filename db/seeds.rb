@@ -49,7 +49,7 @@ Team.create(
   match_id:1,
   season: "Fall 2016",
   score: 2,
-  home: true
+  home: "true"
   )
 
 Team.create(
@@ -57,7 +57,7 @@ Team.create(
   match_id:1,
   season: "Fall 2016",
   score: 0,
-  home: false
+  home: "false"
   )
 
 Userteam.create(
@@ -70,11 +70,11 @@ Userteam.create(
   team_id:2
   )
 
-Stat.create(active: true , user_id:1, sport_id:1, win:1 )
-Stat.create(active: true , user_id:2, sport_id:1, win:2, rating:45 )
-Stat.create(active: true , user_id:3, sport_id:2, win:3 )
-Stat.create(active: true , user_id:4, sport_id:2, win:4 )
-Stat.create(active: true , user_id:1, sport_id:2, win:1 )
+Stat.create(active: "true" , user_id:1, sport_id:1, win:1 )
+Stat.create(active: "true" , user_id:2, sport_id:1, win:2, rating:45 )
+Stat.create(active: "true" , user_id:3, sport_id:2, win:3 )
+Stat.create(active: "true" , user_id:4, sport_id:2, win:4 )
+Stat.create(active: "true" , user_id:1, sport_id:2, win:1 )
 
 
 
