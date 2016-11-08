@@ -4,6 +4,7 @@ class Team < ApplicationRecord
   has_many :userteams
 
   validates :season, :home, presence: true
+  validates :score, numericality:{only_integer: true}
 
   def self.shuffle_rand_teams(teams,total)
     teams= teams.shuffle
