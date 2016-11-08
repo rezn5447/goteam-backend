@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20161106000057) do
     t.integer  "rating",     default: 50,       null: false
     t.integer  "win",        default: 0,        null: false
     t.string   "division",   default: "Silver", null: false
-    t.boolean  "active",     default: false,    null: false
+    t.string   "active",     default: "false",  null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.index ["sport_id"], name: "index_stats_on_sport_id", using: :btree
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20161106000057) do
     t.integer  "match_id"
     t.integer  "sport_id"
     t.integer  "score"
-    t.boolean  "home"
+    t.string   "home"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_teams_on_match_id", using: :btree

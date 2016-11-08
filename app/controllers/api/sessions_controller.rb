@@ -1,6 +1,8 @@
 class Api::SessionsController < ApplicationController
 
   def create
+    p "%"*30
+    p params
     respond_to do |format|
       user = User.authenticate(user_params[:email],user_params[:password])
       if user
