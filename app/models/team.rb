@@ -26,6 +26,7 @@ class Team < ApplicationRecord
       stat = userteam.user.stats.find_by(sport_id:sport_id)
       update_rating = stat.rating + point
       stat.rating = update_rating
+      stat.division = Stat.division?(stat)
       if stat.save
         side.update(updated?:"true")
       else
