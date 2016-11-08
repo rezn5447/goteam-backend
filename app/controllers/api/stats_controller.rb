@@ -14,9 +14,11 @@ class Api::StatsController < ApplicationController
 					i+=1
 				end
 				format.html {render json: details}
+				format.js {render json: details}
 				format.json {render json: details}
 			else
 				format.html {render json: "User does not exist"}
+				format.js {render json: "User does not exist"}
 				format.json {render json: "User does not exist"}
 			end
 		end
