@@ -1,7 +1,5 @@
 module GoogleApiHelper
 
-  require 'dotenv-rails'
-
   def location_results(players,sport)
     # 15 miles = 24140.2 meters
     # 20 miles = 32186.9
