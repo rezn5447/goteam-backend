@@ -64,17 +64,26 @@ class Api::MatchesController < ApplicationController
           teams = match.teams
           home = teams.find_by(home:"true")
           away = teams.find_by(home:"false")
-          if home.updated? == "false" && away.updated? == "false"
-            points = Team.calculate_rating(home,away)
-            Team.update_match_rating(home,points[:home],sport_id)
-            Team.update_match_rating(away,points[:away],sport_id)
-            format.html {render json: user.stats.find_by(sport_id:sport_id)}
-            format.js {render json: user.stats.find_by(sport_id:sport_id)}
-            format.json {render json: user.stats.find_by(sport_id:sport_id)}
+          home.score = params[:home_team]
+          away.score = params[:away_team]
+          if home.save && away.save
+            if home.updated? == "false" && away.updated? == "false"
+              points = Team.calculate_rating(home,away)
+              Team.update_match_rating(home,points[:home],sport_id)
+              Team.update_match_rating(away,points[:away],sport_id)
+              pass_inform = {user:user.stats.find_by(sport_id:sport_id),home:home,away:away}
+              format.html {render json: pass_inform}
+              format.js {render json: pass_inform}
+              format.json {render json: pass_inform}
+            else
+              format.html {render json: "Scores has already been updated."}
+              format.js {render json: "Scores has already been updated."}
+              format.json {render json: "Scores has already been updated."}
+            end
           else
-            format.html {render json: "Scores has already been updated."}
-            format.js {render json: "Scores has already been updated."}
-            format.json {render json: "Scores has already been updated."}
+            format.html {render json: team.errors.full_messages}
+            format.js {render json: team.errors.full_messages}
+            format.json {render json: team.errors.full_messages}
           end
         else
           format.html {render json: "Match does not exist"}

@@ -81,11 +81,11 @@ Userteam.create(
   team_id:2
   )
 
-Stat.create(active: "true" , user_id:1, sport_id:1, win:1 )
-Stat.create(active: "true" , user_id:2, sport_id:1, win:2, rating:45 )
-Stat.create(active: "true" , user_id:3, sport_id:2, win:3 )
-Stat.create(active: "true" , user_id:4, sport_id:2, win:4 )
-Stat.create(active: "true" , user_id:1, sport_id:2, win:1 )
+Stat.create(active: "true" , user_id:1, sport_id:1 )
+Stat.create(active: "true" , user_id:2, sport_id:1, rating:45 )
+Stat.create(active: "true" , user_id:3, sport_id:2 )
+Stat.create(active: "true" , user_id:4, sport_id:2 )
+Stat.create(active: "true" , user_id:1, sport_id:2 )
 
 
 

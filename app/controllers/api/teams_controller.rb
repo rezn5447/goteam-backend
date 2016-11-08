@@ -25,28 +25,4 @@ class Api::TeamsController < ApplicationController
 			end
 		end
 	end
-
-	def update
-		respond_to do |format|
-			# user = user_exist?("jgbCP2MuzW5yAPkGGWEmzQ",params[:id])
-			user = User.find(params[:user_id])
-			if user
-				team = Team.find(params[:id])
-				team.score = params[:score]
-				if team.save
-					format.html {render json:team}
-					format.js {render json:team}
-					format.json {render json:team}
-				else
-					format.html {render json: team.errors.full_messages}
-					format.js {render json: team.errors.full_messages}
-					format.json {render json: team.errors.full_messages}
-				end
-			else
-				format.html {render json: {message: "User does not exist"}}
-				format.js {render json: {message: "User does not exist"}}
-				format.json {render json: {message: "User does not exist"}}
-			end
-		end
-	end
 end
