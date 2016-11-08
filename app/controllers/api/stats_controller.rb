@@ -65,18 +65,25 @@ class Api::StatsController < ApplicationController
 
 	def find
 		respond_to do |format|
-			stat = Stat.where(sport_id:params[:sport_id], user_id:params[:user_id])[0]
-			if stat
-				format.html {render json: stat}
-				format.js {render json: stat}
-				format.json {render json: stat}
+			# user = user_exist?("IxTniH0SmMe9mqkCQOvjuQ",params[:user_id])
+			user = User.find(params[:user_id])
+			if user
+				stat = Stat.where(sport_id:params[:sport_id], user_id:params[:user_id])[0]
+				if stat
+					format.html {render json: stat}
+					format.js {render json: stat}
+					format.json {render json: stat}
+				else
+					format.html {render json: {message:"Does not exist"}}
+					format.js {render json: {message:"Does not exist"}}
+					format.json {render json: {message:"Does not exist"}}
+				end
 			else
-				format.html {render json: {message:"Does not exist"}}
-				format.js {render json: {message:"Does not exist"}}
-				format.json {render json: {message:"Does not exist"}}
+				format.html {render json: {message: "User does not exist"}}
+				format.js {render json: {message: "User does not exist"}}
+				format.json {render json: {message: "User does not exist"}}
 			end
 		end
-
 	end
 
 end

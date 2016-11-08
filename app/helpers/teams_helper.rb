@@ -9,9 +9,9 @@ module TeamsHelper
 			away = Team.create_teams("false",sport.id,match.id)
 
 			if home.save && away.save
-				result = Userteam.join_team(teams[:Home],home)
+				result = Userteam.join_team(teams[:Home],home,sport.id)
 				return result if result!= "success"
-				result = Userteam.join_team(teams[:Home],home)
+				result = Userteam.join_team(teams[:Away],away,sport.id)
 				return result if result!= "success"
 				{Home:home,Home_team: teams[:Home],Away:away,Away_team:teams[:Away],match:match}
 			else
