@@ -17,7 +17,6 @@ class Stat < ApplicationRecord
 				division = division?(stat)
 				stat.update(division:division)
 			end
-
 		end
 	end
 
