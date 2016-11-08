@@ -51,5 +51,34 @@ class Api::MatchesController < ApplicationController
           format.json {render json: "User does not exist"}
         end
       end
+  end
+
+  def update
+    respond_to do |format|
+      # user = user_exist?("IxTniH0SmMe9mqkCQOvjuQ",params[:user_id])
+      user = User.find(params[:user_id])
+      if user
+        match = Match.find(params[:id])
+        if match
+          teams = Match.teams
+          home = teams.find_by(home:"true")
+          away = teams.find_by(home:"false")
+          points = Team.calculate_rating(home,away)
+          Team.update_match_rating(home,points[:home])
+          Team.update_match_rating(away,points[:away])
+          format.html {render json: user.stat}
+          format.js {render json: user.stat}
+          format.json {render json: user.stat}
+        else
+          format.html {render json: "Match does not exist"}
+          format.js {render json: "Match does not exist"}
+          format.json {render json: "Match does not exist"}
+        end
+      else
+        format.html {render json: "User does not exist"}
+        format.js {render json: "User does not exist"}
+        format.json {render json: "User does not exist"}
+      end
     end
   end
+end
