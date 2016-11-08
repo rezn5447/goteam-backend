@@ -2,7 +2,7 @@ module MatchesHelper
   def find_players(userteams)
     team = []
     userteams.each do |userteam|
-      team << userteam.user
+      team << pass_user_params(userteam.user)
     end
     team
   end

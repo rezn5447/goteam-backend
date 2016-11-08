@@ -1,4 +1,7 @@
+# require_relative "../helpers/users_helper"
+
 class Team < ApplicationRecord
+
   belongs_to :sport
   belongs_to :match
   has_many :userteams
@@ -7,7 +10,7 @@ class Team < ApplicationRecord
   validates :score, numericality:{only_integer: true}
 
   def self.shuffle_rand_teams(teams,total)
-    teams= teams.shuffle
+    teams = teams.shuffle
     team_num = total/2
     {Home:teams[0...team_num],Away:teams[team_num..-1]}
   end
