@@ -72,8 +72,11 @@ Stat.create!(active: "true" , user_id: 1, sport_id: 6 )
 end
 
 100.times do
+  mth = rand(1..12)
+  date = rand(1..30)
+  time = ["09:00","12:00","15:00","18:00"].sample
   Match.create!(location: '123 Main St SF, CA',
-   date: "2016-11-12 15:00",
+   date: "2016-#{mth}-#{date} #{time}",
    sport_id: rand(1..8))
 end
 
