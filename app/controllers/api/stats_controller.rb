@@ -28,7 +28,7 @@ class Api::StatsController < ApplicationController
 		respond_to do |format|
 			# user = user_exist?("IxTniH0SmMe9mqkCQOvjuQ",params[:user_id])
 			user = User.find(params[:user_id])
-			stat = Stat.new(user_id:params[:user_id],sport_id: params[:sport_id], active: true)
+			stat = Stat.new(user_id:params[:user_id],sport_id: params[:sport_id], active: "true")
 			if user && stat.save
 				format.html {render json: stat}
 				format.js {render json: stat}
