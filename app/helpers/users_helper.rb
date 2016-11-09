@@ -21,10 +21,10 @@ module UsersHelper
       city: user.city,
       state: user.state,
       zip: user.zip,
-      phone: user.phone,
-      avatar_file_name: user.avatar_file_name,
-      avatar_content_type: user.avatar_content_type,
-      avatar_file_size: user.avatar_file_size
+      phone: user.phone
+      # avatar_file_name: user.avatar_file_name,
+      # avatar_content_type: user.avatar_content_type,
+      # avatar_file_size: user.avatar_file_size
       }
     end
 
