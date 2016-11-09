@@ -1,4 +1,7 @@
 class Api::StatsController < ApplicationController
+	before_action do
+		token_valid?(params[:token])
+	end
 
 	def index
 		respond_to do |format|

@@ -1,4 +1,8 @@
 class Api::TeamsController < ApplicationController
+	before_action do
+		token_valid?(params[:token])
+	end
+
 	def create
 		respond_to do |format|
 			# user = user_exist?("jgbCP2MuzW5yAPkGGWEmzQ",params[:id])

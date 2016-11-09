@@ -25,28 +25,28 @@ User.create!(first_name: "Fuck",
 
 
 Sport.create!(category: "Tennis",
- total_players: 2, name:"Singles"
+ total_players: 2, name:"Singles", description:"Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles). Each player uses a tennis racket that is strung with cord to strike a hollow rubber ball covered with felt over or around a net and into the opponent's court. The object of the game is to play the ball in such a way that the opponent is not able to play a valid return. The player who is unable to return the ball will not gain a point, while the opposite player will."
  )
 Sport.create!(category: "Tennis",name:"Doubles",
- total_players: 4
+ total_players: 4, description: "Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles). Each player uses a tennis racket that is strung with cord to strike a hollow rubber ball covered with felt over or around a net and into the opponent's court. The object of the game is to play the ball in such a way that the opponent is not able to play a valid return. The player who is unable to return the ball will not gain a point, while the opposite player will."
  )
 Sport.create!(category: "Soccer",name:"11 vs 11",
- total_players: 22
+ total_players: 22, description: "Soccer is a game in which two opposing teams defend goals at opposite ends of a field having goal posts at each end, with points being scored chiefly by carrying the ball across the opponent's goal line and by place-kicking or drop-kicking the ball over the crossbar between the opponent's goal posts."
  )
 Sport.create!(category: "Soccer",name:"6 vs 6",
- total_players: 12
+ total_players: 12, description: "Soccer is a game in which two opposing teams defend goals at opposite ends of a field having goal posts at each end, with points being scored chiefly by carrying the ball across the opponent's goal line and by place-kicking or drop-kicking the ball over the crossbar between the opponent's goal posts."
  )
 Sport.create!(category: "Badminton",name:"Singles",
- total_players: 2
+ total_players: 2, description: "Badminton is a game played on a rectangular court by two players or two pairs of players equipped with light rackets used to volley a shuttlecock over a high net that divides the court in half."
  )
 Sport.create!(category: "Badminton",name:"Doubles",
- total_players: 4
+ total_players: 4, description: "Badminton is a game played on a rectangular court by two players or two pairs of players equipped with light rackets used to volley a shuttlecock over a high net that divides the court in half."
  )
 Sport.create!(category: "Table Tennis",name:"Singles",
- total_players: 2
+ total_players: 2, description: "Table tennis, also known as ping pong, is a sport in which two or four players hit a lightweight ball back and forth across a table using a small bat. The game takes place on a hard table divided by a net. Except for the initial serve, the rules are generally as follows: players must allow a ball played toward them to bounce one time on their side of the table, and must return it so that it bounces on the opposite side at least once. A point is scored when a player fails to return the ball within the rules. Play is fast and demands quick reactions. Spinning the ball alters its trajectory and limits an opponent's options, giving the hitter a great advantage."
  )
 Sport.create!(category: "Table Tennis",name:"Doubles",
- total_players: 4
+ total_players: 4, description:"Table tennis, also known as ping pong, is a sport in which two or four players hit a lightweight ball back and forth across a table using a small bat. The game takes place on a hard table divided by a net. Except for the initial serve, the rules are generally as follows: players must allow a ball played toward them to bounce one time on their side of the table, and must return it so that it bounces on the opposite side at least once. A point is scored when a player fails to return the ball within the rules. Play is fast and demands quick reactions. Spinning the ball alters its trajectory and limits an opponent's options, giving the hitter a great advantage."
  )
 Stat.create!(active: "true" , user_id: 1, sport_id: 1 )
 Stat.create!(active: "true" , user_id: 1, sport_id: 2 )
