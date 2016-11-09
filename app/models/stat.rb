@@ -8,14 +8,10 @@ class Stat < ApplicationRecord
 	validates :user, uniqueness:{scope: :sport}
 
 	def self.update_stat(params,stat)
-		if params.include?("stat")
-			stat.update(active: params[:stat][:active]) if params[:stat].include?("active") && (params[:stat][:active] == "true" || params[:stat][:active] == "false")
-			if params[:stat].include?("rating")
-				stat.update(rating: params[:stat][:rating])
+			stat.update(active: params[:active]) if (params[:stat][:active] == "true" || params[:stat][:active] == "false")
+				stat.update(rating: params[:rating]) if params[:rating]
 				division = division?(stat)
 				stat.update(division:division)
-			end
-		end
 	end
 
 	def self.division?(stat)
