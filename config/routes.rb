@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   	end
     get "/matches/all", to: "matches#all"
   	resources :sessions, only:[:create]
-  	resources :sports, only:[:index] do
+  	resources :sports, only:[:index,:show] do
       post "/stats/find", to: "stats#find"
     end
   end

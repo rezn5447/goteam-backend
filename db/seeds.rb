@@ -65,7 +65,7 @@ Stat.create!(active: "true" , user_id: 1, sport_id: 1 )
   Stat.create!(active: "false" , user_id: user.id, sport_id: sport_id )
 end
 
-50.times do
+100.times do
   Match.create!(location: '123 Main St SF, CA',
    date: "2016-11-12 15:00",
    sport_id: rand(1..8))
