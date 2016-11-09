@@ -97,4 +97,18 @@ class Api::MatchesController < ApplicationController
       end
     end
   end
+
+  def all
+    respond_to do |format|
+      matches = Match.all
+      sports = Sport.all
+      sports_match = []
+      sports.each do |sport|
+        sports_match << {"#{sport.category} #{sport.name}": matches.where(sport_id:sport.id)}
+      end
+      format.html {render json:sports_match}
+      format.js {render json:sports_match}
+      format.json {render json:sports_match}
+    end
+  end
 end

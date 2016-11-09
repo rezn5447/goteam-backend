@@ -24,18 +24,7 @@ User.create(first_name: "Fuck",
     )
 
 # 10 Addresses = 10 Users
-addresses.each do |address|
-  User.create(first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    street: address[:street],
-    city: address[:city],
-    state: address[:state],
-    zip: address[:zip],
-    email: Faker::Internet.email,
-    phone: Faker::PhoneNumber.phone_number,
-    password: "password",
-    )
-end
+
 
 Sport.create(category: "Tennis",
  total_players: 2, name:"Singles"
@@ -46,14 +35,42 @@ Sport.create(category: "Tennis",name:"Doubles",
 Sport.create(category: "Soccer",name:"11 vs 11",
  total_players: 22
  )
+Sport.create(category: "Soccer",name:"6 vs 6",
+ total_players: 12
+ )
+Sport.create(category: "Badminton",name:"Singles",
+ total_players: 2
+ )
+Sport.create(category: "Badminton",name:"Doubles",
+ total_players: 4
+ )
+Sport.create(category: "Table Tennis",name:"Singles",
+ total_players: 2
+ )
+Sport.create(category: "Table Tennis",name:"Doubles",
+ total_players: 4
+ )
 
 
-4.times do
+50.times do
   Match.create(location: '123 Main St SF, CA',
    date: "2016-11-12 15:00",
-   sport_id: 1)
+   sport_id: rand(0..7))
 end
 
+100.times do
+  user = User.create(first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    street: addresses[rand(0..9)][:street],
+    city: addresses[rand(0..9)][:city],
+    state: addresses[rand(0..9)][:state],
+    zip: addresses[rand(0..9)][:zip],
+    email: Faker::Internet.email,
+    phone: Faker::PhoneNumber.phone_number,
+    password: "password",
+    )
+    Stat.create(active: "true" , user_id: user.id, sport_id: rand(0..7) )
+end
 
 Team.create(
   sport_id: 1,
@@ -62,7 +79,6 @@ Team.create(
   score: 2,
   home: "true"
   )
-
 Team.create(
   sport_id: 1,
   match_id:1,
@@ -81,11 +97,7 @@ Userteam.create(
   team_id:2
   )
 
-Stat.create(active: "true" , user_id:1, sport_id:1 )
-Stat.create(active: "true" , user_id:2, sport_id:1, rating:45 )
-Stat.create(active: "true" , user_id:3, sport_id:2 )
-Stat.create(active: "true" , user_id:4, sport_id:2 )
-Stat.create(active: "true" , user_id:1, sport_id:2 )
+
 
 
 

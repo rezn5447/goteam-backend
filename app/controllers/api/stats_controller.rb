@@ -31,9 +31,11 @@ class Api::StatsController < ApplicationController
 			stat = Stat.new(user_id:params[:user_id],sport_id: params[:sport_id], active: true)
 			if user && stat.save
 				format.html {render json: stat}
+				format.js {render json: stat}
 				format.json {render json: stat}
 			else
 				format.html {render json: stat.errors.full_messages}
+				format.js {render json: stat.errors.full_messages}
 				format.json {render json: stat.errors.full_messages}
 			end
 		end

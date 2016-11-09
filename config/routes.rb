@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   		resources :teams, only:[:create]
       resources :matches, only:[:index,:show,:update]
   	end
+    get "/matches/all", to: "matches#all"
   	resources :sessions, only:[:create]
   	resources :sports, only:[:index] do
       post "/stats/find", to: "stats#find"
