@@ -267,3 +267,18 @@ Match.where(sport_id:8).each do |match|
     Userteam.create!(user_id:user.id,team_id:away.id)
   end
 end
+
+100.times do
+  user = User.create!(first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    street: addresses[rand(0..9)][:street],
+    city: addresses[rand(0..9)][:city],
+    state: addresses[rand(0..9)][:state],
+    zip: addresses[rand(0..9)][:zip],
+    email: Faker::Internet.email,
+    phone: Faker::PhoneNumber.phone_number,
+    password: "password",
+    )
+  sport_id = rand(1..8)
+  Stat.create!(active: "true" , user_id: user.id, sport_id: sport_id )
+end
