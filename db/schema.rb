@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20161106000057) do
 
   create_table "matches", force: :cascade do |t|
     t.string   "location"
-    t.datetime "date"
+    t.string   "date"
     t.integer  "sport_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20161106000057) do
     t.integer  "user_id",                       null: false
     t.integer  "sport_id",                      null: false
     t.integer  "rating",     default: 50,       null: false
-    t.integer  "win",        default: 0,        null: false
     t.string   "division",   default: "Silver", null: false
     t.string   "active",     default: "false",  null: false
     t.datetime "created_at",                    null: false
