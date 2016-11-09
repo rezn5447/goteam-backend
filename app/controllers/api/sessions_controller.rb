@@ -2,6 +2,9 @@ class Api::SessionsController < ApplicationController
 
   def create
     respond_to do |format|
+      p params
+      p params[:email]
+      p params[:session]
       user = User.authenticate(params[:email],params[:password])
       if user
         format.html {render json: {user:pass_user_params(user),token: gen_token(user)}}
