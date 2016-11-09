@@ -49,6 +49,12 @@ Sport.create!(category: "Table Tennis",name:"Doubles",
  total_players: 4
  )
 Stat.create!(active: "true" , user_id: 1, sport_id: 1 )
+Stat.create!(active: "true" , user_id: 1, sport_id: 2 )
+Stat.create!(active: "true" , user_id: 1, sport_id: 3 )
+Stat.create!(active: "true" , user_id: 1, sport_id: 4 )
+Stat.create!(active: "true" , user_id: 1, sport_id: 5 )
+Stat.create!(active: "true" , user_id: 1, sport_id: 6 )
+
 
 150.times do
   user = User.create!(first_name: Faker::Name.first_name,

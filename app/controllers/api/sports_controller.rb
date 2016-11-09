@@ -7,4 +7,14 @@ class Api::SportsController < ApplicationController
       format.json {render json: pass_sport_params(sports)}
     end
   end
+
+  def show
+    sport = Sport.find(params[:id])
+    respond_to do |format|
+      sport = {id: sport.id, name: sport.name,total_players: sport.total_players, category:sport.category}
+      format.html {render json: sport}
+      format.js {render json: sport}
+      format.json {render json: sport}
+    end
+  end
 end
