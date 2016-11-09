@@ -32,4 +32,22 @@ class User < ApplicationRecord
     return nil
   end
 
+  def self.update_user(params,user)
+    user.email = params[:email] if params[:email]
+    user.first_name = params[:first_name] if params[:first_name]
+    user.last_name = params[:last_name] if params[:last_name]
+    user.street = params[:street] if params[:street]
+    user.city = params[:city] if params[:city]
+    user.state = params[:state] if params[:state]
+    user.zip = params[:zip] if params[:zip]
+    user.phone = params[:phone] if params[:phone]
+    user.avatar = params[:avatar] if params[:avatar]
+
+    if user.save
+      user
+    else
+      user.errors.full_messages
+    end
+  end
+
 end

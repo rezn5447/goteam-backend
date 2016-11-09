@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action only:[:show] do
+  before_action only:[:show, :update] do
     token_valid?(params[:token])
   end
 
@@ -34,9 +34,25 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  private
+  def update
+    respond_to do |format|
+      user = User.find(params[:id])
+      if user
+        result = User.update_user(params,user)
+        format.html {render json: result}
+        format.js {render json: result}
+        format.json {render json: result}
+      else
+       format.html {render json: {message: "User does not exist"}}
+       format.js {render json: {message: "User does not exist"}}
+       format.json {render json: {message:"User does not exist"}}
+     end
+   end
+ end
 
-  def user_params
-    params.require(:user).permit(:email,:password,:first_name,:last_name,:street,:city,:state,:zip,:phone,:avatar)
-  end
+ private
+
+ def user_params
+  params.require(:user).permit(:email,:password,:first_name,:last_name,:street,:city,:state,:zip,:phone,:avatar)
+end
 end
