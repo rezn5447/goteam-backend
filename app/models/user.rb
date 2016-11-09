@@ -8,7 +8,6 @@ class User < ApplicationRecord
 
   validates :email, :password_hash, :first_name, :last_name, :street, :city, :state, :zip, :phone, presence: true
   validates :email, :password_hash, uniqueness: true
-  validates :token, uniqueness: true
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   # validates :avatar, attachment_presence: true
 

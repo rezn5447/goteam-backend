@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20161109175642) do
   create_table "sports", force: :cascade do |t|
     t.string   "name",          null: false
     t.string   "category",      null: false
+    t.text     "description",   null: false
     t.integer  "total_players", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -67,7 +68,6 @@ ActiveRecord::Schema.define(version: 20161109175642) do
     t.string   "state",                            null: false
     t.integer  "zip",                              null: false
     t.string   "phone",                            null: false
-    t.text     "token",                            null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.string   "avatar_file_name"
