@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Use Paperclip to upload image
 gem "paperclip", "~> 5.0.0"
+# Use JWT for generating token
+gem 'jwt'
 
 # Formatters for ease of debugging
 gem 'awesome_print'

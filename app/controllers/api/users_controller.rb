@@ -1,4 +1,7 @@
 class Api::UsersController < ApplicationController
+  before_action only:[:show] do
+    token_valid?(params[:token])
+  end
 
   def create
     user = User.new(user_params)

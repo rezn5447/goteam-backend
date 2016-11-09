@@ -1,4 +1,5 @@
 class Api::SportsController < ApplicationController
+
   def index
     sports = Sport.all
     respond_to do |format|

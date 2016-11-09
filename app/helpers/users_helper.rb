@@ -1,7 +1,15 @@
 module UsersHelper
-  def find_token?(token,user)
-    return true if token == user.token
-    false
+  def gen_token(user)
+    payload = {data:user.id}
+    token = JWT.encode payload, ENV['SECRET'], 'HS256'
+  end
+
+  def token_valid?(token)
+    begin
+      decoded_token = JWT.decode token, ENV['SECRET'], true, { :algorithm => 'HS256' }
+    rescue
+      render json: "Token is not valid."
+    end
   end
 
   def pass_user_params(user)
@@ -14,8 +22,8 @@ module UsersHelper
       state: user.state,
       zip: user.zip,
       phone: user.phone,
-      avatar: user.avatar,
-      token: user.token}
+      avatar: user.avatar
+      }
     end
 
     def user_exist?(token,user_id)
