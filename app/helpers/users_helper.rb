@@ -14,6 +14,7 @@ module UsersHelper
       state: user.state,
       zip: user.zip,
       phone: user.phone,
+      avatar: user.avatar,
       token: user.token}
     end
 
