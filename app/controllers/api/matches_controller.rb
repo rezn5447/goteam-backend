@@ -21,9 +21,9 @@ class Api::MatchesController < ApplicationController
         format.js {render json: matches}
         format.json {render json: matches}
       else
-        format.html {render json: "User does not exist"}
-        format.js {render json: "User does not exist"}
-        format.json {render json: "User does not exist"}
+        format.html {render json: {message: "User does not exist"}}
+        format.js {render json: {message: "User does not exist"}}
+        format.json {render json: {message: "User does not exist"}}
       end
     end
   end
