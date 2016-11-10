@@ -73,7 +73,7 @@ Stat.create!(active: "true" , user_id: 1, sport_id: 6 )
 end
 
 100.times do
-  mth = rand(1..12)
+  mth = rand(1..10)
   date = rand(1..30)
   time = ["09:00","12:00","15:00","18:00"].sample
   Match.create!(location: '123 Main St SF, CA',
@@ -81,20 +81,44 @@ end
    sport_id: rand(1..8))
 end
 
+50.times do
+  mth = rand(1..12)
+  date = rand(1..30)
+  time = ["09:00","12:00","15:00","18:00"].sample
+  Match.create!(location: '123 Main St SF, CA',
+   date: "2017-#{mth}-#{date} #{time}",
+   sport_id: rand(1..8))
+end
+
 Match.where(sport_id:1).each do |match|
   user_length = Stat.where(sport_id:1).count
-  home = Team.create!(
-    sport_id:match.sport_id ,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: "true")
-  away = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: "false")
+  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "false")
+  else
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "false")
+  end
   user = Stat.where(sport_id:1)[rand(0...user_length)].user
   Userteam.create!(user_id:user.id,team_id:home.id)
   user = Stat.all.where(sport_id:1)[rand(0...user_length)].user
@@ -103,18 +127,33 @@ end
 
 Match.where(sport_id:2).each do |match|
   user_length = Stat.where(sport_id:2).count
-  home = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"true")
-  away = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"false")
+  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "false")
+  else
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "false")
+  end
   2.times do
     user = Stat.all.where(sport_id:2)[rand(0...user_length)].user
     Userteam.create!(user_id:user.id,team_id:home.id)
@@ -127,18 +166,33 @@ end
 
 Match.where(sport_id:3).each do |match|
   user_length = Stat.where(sport_id:3).count
-  home = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"true")
-  away = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"false")
+  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      score: rand(0..2),
+      "updated?": "true",
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "false")
+  else
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "false")
+  end
   11.times do
     user = Stat.all.where(sport_id:3)[rand(0...user_length)].user
     Userteam.create!(user_id:user.id,team_id:home.id)
@@ -151,18 +205,33 @@ end
 
 Match.where(sport_id:4).each do |match|
   user_length = Stat.where(sport_id:4).count
-  home = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"true")
-  away = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"false")
+  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "false")
+  else
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "false")
+  end
   6.times do
     user = Stat.all.where(sport_id:4)[rand(0...user_length)].user
     Userteam.create!(user_id:user.id,team_id:home.id)
@@ -175,18 +244,33 @@ end
 
 Match.where(sport_id:5).each do |match|
   user_length = Stat.where(sport_id:5).count
-  home = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"true")
-  away = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"false")
+  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "false")
+  else
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "false")
+  end
   1.times do
     user = Stat.all.where(sport_id:5)[rand(0...user_length)].user
     Userteam.create!(user_id:user.id,team_id:home.id)
@@ -199,18 +283,33 @@ end
 
 Match.where(sport_id:6).each do |match|
   user_length = Stat.where(sport_id:6).count
-  home = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"true")
-  away = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"false")
+  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "false")
+  else
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "false")
+  end
   2.times do
     user = Stat.all.where(sport_id:6)[rand(0...user_length)].user
     Userteam.create!(user_id:user.id,team_id:home.id)
@@ -223,18 +322,33 @@ end
 
 Match.where(sport_id:7).each do |match|
   user_length = Stat.where(sport_id:7).count
-  home = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"true")
-  away = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"false")
+  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "false")
+  else
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "false")
+  end
   1.times do
     user = Stat.all.where(sport_id:7)[rand(0...user_length)].user
     Userteam.create!(user_id:user.id,team_id:home.id)
@@ -247,18 +361,33 @@ end
 
 Match.where(sport_id:8).each do |match|
   user_length = Stat.where(sport_id:8).count
-  home = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"true")
-  away = Team.create!(
-    sport_id: match.sport_id,
-    match_id: match.id,
-    season: "Fall 2016",
-    score: rand(0..2),
-    home: :"false")
+  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      "updated?": "true",
+      score: rand(0..2),
+      home: "false")
+  else
+    home = Team.create!(
+      sport_id:match.sport_id ,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "true")
+    away = Team.create!(
+      sport_id: match.sport_id,
+      match_id: match.id,
+      season: "Fall 2016",
+      home: "false")
+  end
   2.times do
     user = Stat.all.where(sport_id:8)[rand(0...user_length)].user
     Userteam.create!(user_id:user.id,team_id:home.id)
@@ -270,17 +399,17 @@ Match.where(sport_id:8).each do |match|
 end
 
 100.times do
-   i = rand(0..9)
-  user = User.create!(first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    street: addresses[i][:street],
-    city: addresses[i][:city],
-    state: addresses[i][:state],
-    zip: addresses[i][:zip],
-    email: Faker::Internet.email,
-    phone: Faker::PhoneNumber.phone_number,
-    password: "password",
-    )
-  sport_id = rand(1..8)
-  Stat.create!(active: "true" , user_id: user.id, sport_id: sport_id )
+ i = rand(0..9)
+ user = User.create!(first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  street: addresses[i][:street],
+  city: addresses[i][:city],
+  state: addresses[i][:state],
+  zip: addresses[i][:zip],
+  email: Faker::Internet.email,
+  phone: Faker::PhoneNumber.phone_number,
+  password: "password",
+  )
+ sport_id = rand(1..8)
+ Stat.create!(active: "true" , user_id: user.id, sport_id: sport_id )
 end
