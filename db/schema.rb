@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20161109175642) do
     t.string   "season",                       null: false
     t.integer  "match_id",                     null: false
     t.integer  "sport_id",                     null: false
-    t.integer  "score",      default: 0,       null: false
+    t.integer  "score"
     t.string   "home",                         null: false
     t.string   "updated?",   default: "false"
     t.datetime "created_at",                   null: false

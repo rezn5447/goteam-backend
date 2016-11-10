@@ -130,7 +130,7 @@ end
 
 Match.where(sport_id:2).each do |match|
   user_length = Stat.where(sport_id:2).count
-  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") > DateTime.new(2016,5,15)
+  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") < DateTime.new(2016,5,15)
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
