@@ -97,14 +97,12 @@ Match.where(sport_id:1).each do |match|
       sport_id:match.sport_id ,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "true")
     away = Team.create!(
       sport_id: match.sport_id,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "false")
   else
@@ -132,14 +130,12 @@ Match.where(sport_id:2).each do |match|
       sport_id:match.sport_id ,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "true")
     away = Team.create!(
       sport_id: match.sport_id,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "false")
   else
@@ -172,13 +168,11 @@ Match.where(sport_id:3).each do |match|
       match_id: match.id,
       season: "Fall 2016",
       score: rand(0..2),
-      "updated?": "true",
       home: "true")
     away = Team.create!(
       sport_id: match.sport_id,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "false")
   else
@@ -210,14 +204,12 @@ Match.where(sport_id:4).each do |match|
       sport_id:match.sport_id ,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "true")
     away = Team.create!(
       sport_id: match.sport_id,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "false")
   else
@@ -249,14 +241,12 @@ Match.where(sport_id:5).each do |match|
       sport_id:match.sport_id ,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "true")
     away = Team.create!(
       sport_id: match.sport_id,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "false")
   else
@@ -288,14 +278,12 @@ Match.where(sport_id:6).each do |match|
       sport_id:match.sport_id ,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "true")
     away = Team.create!(
       sport_id: match.sport_id,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "false")
   else
@@ -327,14 +315,12 @@ Match.where(sport_id:7).each do |match|
       sport_id:match.sport_id ,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "true")
     away = Team.create!(
       sport_id: match.sport_id,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "false")
   else
@@ -366,14 +352,12 @@ Match.where(sport_id:8).each do |match|
       sport_id:match.sport_id ,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "true")
     away = Team.create!(
       sport_id: match.sport_id,
       match_id: match.id,
       season: "Fall 2016",
-      "updated?": "true",
       score: rand(0..2),
       home: "false")
   else
