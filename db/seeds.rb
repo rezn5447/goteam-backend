@@ -95,7 +95,7 @@ end
 
 Match.where(sport_id:1).each do |match|
   user_length = Stat.where(sport_id:1).count
-  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") > DateTime.new(2016,5,15)
+  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") < DateTime.new(2016,5,15)
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -169,7 +169,7 @@ end
 
 Match.where(sport_id:3).each do |match|
   user_length = Stat.where(sport_id:3).count
-  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") > DateTime.new(2016,5,15)
+  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") < DateTime.new(2016,5,15)
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -208,7 +208,7 @@ end
 
 Match.where(sport_id:4).each do |match|
   user_length = Stat.where(sport_id:4).count
-  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") > DateTime.new(2016,5,15)
+  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") < DateTime.new(2016,5,15)
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -247,7 +247,7 @@ end
 
 Match.where(sport_id:5).each do |match|
   user_length = Stat.where(sport_id:5).count
-  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") > DateTime.new(2016,5,15)
+  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") < DateTime.new(2016,5,15)
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -286,7 +286,7 @@ end
 
 Match.where(sport_id:6).each do |match|
   user_length = Stat.where(sport_id:6).count
-  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") > DateTime.new(2016,5,15)
+  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") < DateTime.new(2016,5,15)
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -325,7 +325,7 @@ end
 
 Match.where(sport_id:7).each do |match|
   user_length = Stat.where(sport_id:7).count
-  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") > DateTime.new(2016,5,15)
+  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") < DateTime.new(2016,5,15)
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -364,7 +364,7 @@ end
 
 Match.where(sport_id:8).each do |match|
   user_length = Stat.where(sport_id:8).count
-  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") > DateTime.new(2016,2,3)
+  if DateTime.strptime(match.date,"%Y-%m-%d %H:%M") < DateTime.new(2016,2,3)
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
