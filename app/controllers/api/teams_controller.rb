@@ -12,6 +12,8 @@ class Api::TeamsController < ApplicationController
 				sport = stat.sport
 				total_players = sport.total_players
 				active_players = sport.stats.where(active:"true", division:stat.division)
+				active_players.pop
+				active_players << user
 				if active_players.count >= total_players
 					result = assign_players(active_players,total_players,sport)
 					format.html {render json: result}
