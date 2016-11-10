@@ -26,7 +26,6 @@ module GoogleApiHelper
   def sports_in_area(geolocation,radius,sport)
     results = []
     response = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{sport}+courts&location=#{geolocation["lat"]},#{geolocation["lng"]}&radius=#{radius}&key=#{ENV['LOK']}")
-    p response
     response['results'].each do |result|
       results << [result['formatted_address'], result['name']]
     end
