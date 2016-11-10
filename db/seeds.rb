@@ -12,7 +12,7 @@ addresses = [
 
 ]
 
-User.create!(first_name: "Fuck",
+User.create!(first_name: "Phuck",
   last_name: "Yu",
   street: addresses[0][:street],
   city: addresses[0][:city],
@@ -48,14 +48,14 @@ Sport.create!(category: "Table Tennis",name:"Singles",
 Sport.create!(category: "Table Tennis",name:"Doubles",
  total_players: 4, description:"Table tennis, also known as ping pong, is a sport in which two or four players hit a lightweight ball back and forth across a table using a small bat. The game takes place on a hard table divided by a net. Except for the initial serve, the rules are generally as follows: players must allow a ball played toward them to bounce one time on their side of the table, and must return it so that it bounces on the opposite side at least once. A point is scored when a player fails to return the ball within the rules. Play is fast and demands quick reactions. Spinning the ball alters its trajectory and limits an opponent's options, giving the hitter a great advantage.", video_url: "https://www.youtube.com/embed/jjbFbNiG_iY"
  )
-Stat.create!(active: "true" , user_id: 1, sport_id: 1 )
-Stat.create!(active: "true" , user_id: 1, sport_id: 2 )
-Stat.create!(active: "true" , user_id: 1, sport_id: 3 )
-Stat.create!(active: "true" , user_id: 1, sport_id: 4 )
-Stat.create!(active: "true" , user_id: 1, sport_id: 5 )
-Stat.create!(active: "true" , user_id: 1, sport_id: 6 )
+Stat.create!(active: "true" , user_id: 1, sport_id: 1 ,rating: 64)
+Stat.create!(active: "true" , user_id: 1, sport_id: 2 ,rating: 60)
+Stat.create!(active: "true" , user_id: 1, sport_id: 3 ,rating: 62)
+Stat.create!(active: "true" , user_id: 1, sport_id: 4 ,rating: 54)
+Stat.create!(active: "true" , user_id: 1, sport_id: 5 ,rating: 48)
+Stat.create!(active: "true" , user_id: 1, sport_id: 6 ,rating: 52)
 
-
+rating = (40..70).step(2).to_a
 150.times do
   i = rand(0..9)
   user = User.create!(first_name: Faker::Name.first_name,
@@ -69,7 +69,7 @@ Stat.create!(active: "true" , user_id: 1, sport_id: 6 )
     password: "password",
     )
   sport_id = rand(1..8)
-  Stat.create!(active: "false" , user_id: user.id, sport_id: sport_id )
+  Stat.create!(active: "false" , user_id: user.id, sport_id: sport_id, rating: rating.sample)
 end
 
 100.times do
@@ -92,7 +92,7 @@ end
 
 Match.where(sport_id:1).each do |match|
   user_length = Stat.where(sport_id:1).count
-  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+  if match.date <  DateTime.now.strftime("%Y-%m-%d %H:%M")
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -127,7 +127,7 @@ end
 
 Match.where(sport_id:2).each do |match|
   user_length = Stat.where(sport_id:2).count
-  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+  if match.date <  DateTime.now.strftime("%Y-%m-%d %H:%M")
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -166,7 +166,7 @@ end
 
 Match.where(sport_id:3).each do |match|
   user_length = Stat.where(sport_id:3).count
-  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+  if match.date <  DateTime.now.strftime("%Y-%m-%d %H:%M")
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -205,7 +205,7 @@ end
 
 Match.where(sport_id:4).each do |match|
   user_length = Stat.where(sport_id:4).count
-  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+  if match.date <  DateTime.now.strftime("%Y-%m-%d %H:%M")
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -244,7 +244,7 @@ end
 
 Match.where(sport_id:5).each do |match|
   user_length = Stat.where(sport_id:5).count
-  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+  if match.date <  DateTime.now.strftime("%Y-%m-%d %H:%M")
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -283,7 +283,7 @@ end
 
 Match.where(sport_id:6).each do |match|
   user_length = Stat.where(sport_id:6).count
-  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+  if match.date <  DateTime.now.strftime("%Y-%m-%d %H:%M")
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -322,7 +322,7 @@ end
 
 Match.where(sport_id:7).each do |match|
   user_length = Stat.where(sport_id:7).count
-  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+  if match.date <  DateTime.now.strftime("%Y-%m-%d %H:%M")
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -361,7 +361,7 @@ end
 
 Match.where(sport_id:8).each do |match|
   user_length = Stat.where(sport_id:8).count
-  if match.date <  DateTime.now.strftime("%d/%m/%Y %H:%M")
+  if match.date <  DateTime.now.strftime("%Y-%m-%d %H:%M")
     home = Team.create!(
       sport_id:match.sport_id ,
       match_id: match.id,
@@ -411,5 +411,5 @@ end
   password: "password",
   )
  sport_id = rand(1..8)
- Stat.create!(active: "true" , user_id: user.id, sport_id: sport_id )
+ Stat.create!(active: "true" , user_id: user.id, sport_id: sport_id , rating: rating.sample)
 end
