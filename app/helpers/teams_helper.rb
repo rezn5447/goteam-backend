@@ -1,6 +1,6 @@
 module TeamsHelper
-	def assign_players(players,total,sport)
-		teams = limit_players(players,total)
+	def assign_players(players,total,sport,user_stat)
+		teams = limit_players(players,total,user_stat)
 		locations = location_results(teams,sport)
 		teams = Team.shuffle_rand_teams(teams,total)
 		match = Match.create_match(sport.id,locations[0])
@@ -22,10 +22,10 @@ module TeamsHelper
 		end
 	end
 
-	def limit_players(players,total)
+	def limit_players(players,total,user_stat)
 		players = players.order(:updated_at)
-		i = 0
-		teams = []
+		i = 1
+		teams = [user_stat]
 		while i < total
 			player = User.find(players[i].user_id)
 			teams << player
