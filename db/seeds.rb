@@ -57,12 +57,13 @@ Stat.create!(active: "true" , user_id: 1, sport_id: 6 )
 
 
 150.times do
+  i = rand(0..9)
   user = User.create!(first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    street: addresses[rand(0..9)][:street],
-    city: addresses[rand(0..9)][:city],
-    state: addresses[rand(0..9)][:state],
-    zip: addresses[rand(0..9)][:zip],
+    street: addresses[i][:street],
+    city: addresses[i][:city],
+    state: addresses[i][:state],
+    zip: addresses[i][:zip],
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.phone_number,
     password: "password",
@@ -269,12 +270,13 @@ Match.where(sport_id:8).each do |match|
 end
 
 100.times do
+   i = rand(0..9)
   user = User.create!(first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    street: addresses[rand(0..9)][:street],
-    city: addresses[rand(0..9)][:city],
-    state: addresses[rand(0..9)][:state],
-    zip: addresses[rand(0..9)][:zip],
+    street: addresses[i][:street],
+    city: addresses[i][:city],
+    state: addresses[i][:state],
+    zip: addresses[i][:zip],
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.phone_number,
     password: "password",
