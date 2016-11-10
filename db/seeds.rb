@@ -48,12 +48,12 @@ Sport.create!(category: "Table Tennis",name:"Singles",
 Sport.create!(category: "Table Tennis",name:"Doubles",
  total_players: 4, description:"Table tennis, also known as ping pong, is a sport in which two or four players hit a lightweight ball back and forth across a table using a small bat. The game takes place on a hard table divided by a net. Except for the initial serve, the rules are generally as follows: players must allow a ball played toward them to bounce one time on their side of the table, and must return it so that it bounces on the opposite side at least once. A point is scored when a player fails to return the ball within the rules. Play is fast and demands quick reactions. Spinning the ball alters its trajectory and limits an opponent's options, giving the hitter a great advantage.", video_url: "https://www.youtube.com/embed/jjbFbNiG_iY"
  )
-Stat.create!(active: "true" , user_id: 1, sport_id: 1 ,rating: 64)
-Stat.create!(active: "true" , user_id: 1, sport_id: 2 ,rating: 60)
-Stat.create!(active: "true" , user_id: 1, sport_id: 3 ,rating: 62)
-Stat.create!(active: "true" , user_id: 1, sport_id: 4 ,rating: 54)
-Stat.create!(active: "true" , user_id: 1, sport_id: 5 ,rating: 48)
-Stat.create!(active: "true" , user_id: 1, sport_id: 6 ,rating: 52)
+Stat.create!( user_id: 1, sport_id: 1 ,rating: 64)
+Stat.create!( user_id: 1, sport_id: 2 ,rating: 60)
+Stat.create!( user_id: 1, sport_id: 3 ,rating: 62)
+Stat.create!( user_id: 1, sport_id: 4 ,rating: 54)
+Stat.create!( user_id: 1, sport_id: 5 ,rating: 48)
+Stat.create!( user_id: 1, sport_id: 6 ,rating: 52)
 
 rating = (40..70).step(2).to_a
 150.times do
