@@ -71,18 +71,26 @@ class Api::MatchesController < ApplicationController
           home.score = params[:home_team]
           away.score = params[:away_team]
           if home.save && away.save
+            home_team = []
+            home.userteams.each do |usersteam|
+              home_team << usersteam.user
+            end
+            away_team = []
+            away.userteams.each do |usersteam|
+              away_team << usersteam.user
+            end
             if home.updated? == "false" && away.updated? == "false"
               points = Team.calculate_rating(home,away)
               Team.update_match_rating(home,points[:home],sport_id)
               Team.update_match_rating(away,points[:away],sport_id)
-              pass_inform = {user:user.stats.find_by(sport_id:sport_id),home:home,away:away}
+              pass_inform = {user:user.stats.find_by(sport_id:sport_id),Home:home,Home_team: home_team,Away:away, Away_team: away_team}
               format.html {render json: pass_inform}
               format.js {render json: pass_inform}
               format.json {render json: pass_inform}
             else
-              format.html {render json: {message: "Scores has already been updated."}}
-              format.js {render json: {message: "Scores has already been updated."}}
-              format.json {render json: {message: "Scores has already been updated."}}
+              format.html {render json: {user:user.stats.find_by(sport_id:sport_id),Home:home,Home_team: home_team,Away:away, Away_team: away_team,message: "Scores has already been updated."}}
+              format.js {render json: {user:user.stats.find_by(sport_id:sport_id),Home:home,Home_team: home_team,Away:away, Away_team: away_team,message: "Scores has already been updated."}}
+              format.json {render json: {user:user.stats.find_by(sport_id:sport_id),Home:home,Home_team: home_team,Away:away, Away_team: away_team,message: "Scores has already been updated."}}
             end
           else
             format.html {render json: team.errors.full_messages}
