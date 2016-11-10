@@ -12,7 +12,7 @@ class Api::SportsController < ApplicationController
   def show
     sport = Sport.find(params[:id])
     respond_to do |format|
-      sport = {id: sport.id, name: sport.name,total_players: sport.total_players, category:sport.category}
+      sport = {id: sport.id, name: sport.name,total_players: sport.total_players, category:sport.category, description: sport.description, video_url: sport.video_url}
       format.html {render json: sport}
       format.js {render json: sport}
       format.json {render json: sport}
