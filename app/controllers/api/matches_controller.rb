@@ -1,4 +1,8 @@
 class Api::MatchesController < ApplicationController
+  before_action do
+    token_valid?(params[:token])
+  end
+
   def index
     respond_to do |format|
        # user = user_exist?("IxTniH0SmMe9mqkCQOvjuQ",params[:user_id])

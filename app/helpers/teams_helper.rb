@@ -2,7 +2,6 @@ module TeamsHelper
 	def assign_players(stats,total,sport,user_stat)
 		teams = limit_players(stats,total,user_stat)
 		locations = location_results(teams,sport)
-		p locations
 		teams = Team.shuffle_rand_teams(teams,total)
 		match = Match.create_match(sport.id,locations[0])
 		if match.save
