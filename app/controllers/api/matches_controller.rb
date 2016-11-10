@@ -50,9 +50,9 @@ class Api::MatchesController < ApplicationController
             format.json {render json: {message: "Match does not exist"}}
           end
         else
-          format.html {render json: "User does not exist"}
-          format.js {render json: "User does not exist"}
-          format.json {render json: "User does not exist"}
+          format.html {render json: {message: "User does not exist"}}
+          format.js {render json: {message: "User does not exist"}}
+          format.json {render json: {message: "User does not exist"}}
         end
       end
     end
@@ -80,9 +80,9 @@ class Api::MatchesController < ApplicationController
               format.js {render json: pass_inform}
               format.json {render json: pass_inform}
             else
-              format.html {render json: "Scores has already been updated."}
-              format.js {render json: "Scores has already been updated."}
-              format.json {render json: "Scores has already been updated."}
+              format.html {render json: {message: "Scores has already been updated."}}
+              format.js {render json: {message: "Scores has already been updated."}}
+              format.json {render json: {message: "Scores has already been updated."}}
             end
           else
             format.html {render json: team.errors.full_messages}
