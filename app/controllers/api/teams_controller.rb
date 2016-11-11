@@ -21,7 +21,7 @@ class Api::TeamsController < ApplicationController
 				p stat.division
 				active_stats = sport.stats.where(active:"true", division:stat.division)
 				p "*"*20
-				p active_stats.user
+				p active_stats.all
 				p"$"*20
 				p active_stats.count
 				if active_stats.count >= total_players
