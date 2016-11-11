@@ -12,13 +12,13 @@ addresses = [
 
 ]
 
-User.create!(first_name: "Phuck",
+User.create!(first_name: "Lo Ve",
   last_name: "Yu",
   street: addresses[0][:street],
   city: addresses[0][:city],
   state: addresses[0][:state],
   zip: addresses[0][:zip],
-  email: "1@1.com",
+  email: "hongkong@num1.com",
   phone: Faker::PhoneNumber.phone_number,
   password: "1",
   )
@@ -900,18 +900,19 @@ end
  Stat.create!(active: "true" , user_id: user.id, sport_id: 1 , rating: 64, division: "Gold")
 end
 
-# 100.times do
-#  i = rand(0..9)
-#  user = User.create!(first_name: Faker::Name.first_name,
-#   last_name: Faker::Name.last_name,
-#   street: addresses[i][:street],
-#   city: addresses[i][:city],
-#   state: addresses[i][:state],
-#   zip: addresses[i][:zip],
-#   email: Faker::Internet.email,
-#   phone: Faker::PhoneNumber.phone_number,
-#   password: "password"
-#   )
-#  sport_id = rand(1..19)
-#  Stat.create!(active: "true" , user_id: user.id, sport_id:sport_id , rating: rating.sample)
-# end
+100.times do
+ i = rand(0..9)
+ user = User.create!(first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  street: addresses[i][:street],
+  city: addresses[i][:city],
+  state: addresses[i][:state],
+  zip: addresses[i][:zip],
+  email: Faker::Internet.email,
+  phone: Faker::PhoneNumber.phone_number,
+  password: "password"
+  )
+ sport_id = rand(1..19)
+ stat = Stat.create!(active: "true" , user_id: user.id, sport_id:sport_id , rating: rating.sample)
+ stat.update(division: Stat.division?(stat))
+end
