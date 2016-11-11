@@ -6,6 +6,7 @@ class Api::TeamsController < ApplicationController
 	def create
 		respond_to do |format|
 			p "@"*20
+			p params
 			# user = user_exist?("jgbCP2MuzW5yAPkGGWEmzQ",params[:id])
 			user = User.find(params[:user_id])
 			if user
