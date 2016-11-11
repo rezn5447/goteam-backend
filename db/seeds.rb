@@ -884,7 +884,7 @@ Match.where(sport_id:19).each do |match|
   end
 end
 
-200.times do
+500.times do
  i = rand(0..9)
  user = User.create!(first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
