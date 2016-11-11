@@ -8,7 +8,7 @@ class Match < ApplicationRecord
     time = ["09:00","12:00","15:00","18:00"].sample
     weekend = [:sunday,:saturday].sample
     date = Time.now.next_week(weekend).strftime("%Y-%m-%d #{time}")
-    location = location[1] +location[0]
+    location = location[1] + " " + location[0]
     match = Match.new(location:location,sport_id:sport_id, date:date)
   end
 end
