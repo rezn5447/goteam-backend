@@ -894,8 +894,24 @@ end
   zip: addresses[i][:zip],
   email: Faker::Internet.email,
   phone: Faker::PhoneNumber.phone_number,
-  password: "password",
+  password: "password"
   )
  sport_id = rand(1..19)
  Stat.create!(active: "true" , user_id: user.id, sport_id: 1 , rating: 64)
+end
+
+100.times do
+ i = rand(0..9)
+ user = User.create!(first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  street: addresses[i][:street],
+  city: addresses[i][:city],
+  state: addresses[i][:state],
+  zip: addresses[i][:zip],
+  email: Faker::Internet.email,
+  phone: Faker::PhoneNumber.phone_number,
+  password: "password"
+  )
+ sport_id = rand(1..19)
+ Stat.create!(active: "true" , user_id: user.id, sport_id:sport_id , rating: rating.sample)
 end
