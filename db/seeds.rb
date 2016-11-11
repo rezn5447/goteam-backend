@@ -132,7 +132,7 @@ end
   time = ["09:00","12:00","15:00","18:00"].sample
   Match.create!(location: '123 Main St SF, CA',
    date: "2016-#{mth}-#{date} #{time}",
-   sport_id: rand(1..20))
+   sport_id: rand(1..19))
 end
 
 100.times do
