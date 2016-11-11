@@ -5,6 +5,7 @@ class Api::TeamsController < ApplicationController
 
 	def create
 		respond_to do |format|
+			p "@"*20
 			# user = user_exist?("jgbCP2MuzW5yAPkGGWEmzQ",params[:id])
 			user = User.find(params[:user_id])
 			if user
@@ -18,6 +19,8 @@ class Api::TeamsController < ApplicationController
 				active_stats = sport.stats.where(active:"true", division:stat.division)
 				p "*"*20
 				p active_stats
+				p"$"*20
+				p active_stats.count
 				if active_stats.count >= total_players
 					result = assign_players(active_stats,total_players,sport,stat)
 					format.html {render json: result}
