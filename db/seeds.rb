@@ -104,6 +104,15 @@ Stat.create!( user_id: 1, sport_id: 9 ,rating: 62)
 Stat.create!( user_id: 1, sport_id: 10 ,rating: 54)
 Stat.create!( user_id: 1, sport_id: 11,rating: 48)
 Stat.create!( user_id: 1, sport_id: 12,rating: 52)
+Stat.create!( user_id: 1, sport_id: 13,rating: 52)
+Stat.create!( user_id: 1, sport_id: 14,rating: 52)
+Stat.create!( user_id: 1, sport_id: 15,rating: 52)
+Stat.create!( user_id: 1, sport_id: 16,rating: 52)
+Stat.create!( user_id: 1, sport_id: 17,rating: 52)
+Stat.create!( user_id: 1, sport_id: 18,rating: 52)
+Stat.create!( user_id: 1, sport_id: 19,rating: 52)
+Stat.create!( user_id: 1, sport_id: 20,rating: 52)
+
 
 rating = (40..70).step(2).to_a
 150.times do
@@ -118,26 +127,26 @@ rating = (40..70).step(2).to_a
     phone: Faker::PhoneNumber.phone_number,
     password: "password",
     )
-  sport_id = rand(1..8)
+  sport_id = rand(1..20)
   Stat.create!(active: "false" , user_id: user.id, sport_id: sport_id, rating: rating.sample)
 end
 
-100.times do
+200.times do
   mth = rand(1..10)
   date = rand(1..28)
   time = ["09:00","12:00","15:00","18:00"].sample
   Match.create!(location: '123 Main St SF, CA',
    date: "2016-#{mth}-#{date} #{time}",
-   sport_id: rand(1..8))
+   sport_id: rand(1..20))
 end
 
-50.times do
+100.times do
   mth = rand(11..12)
   date = rand(15..28)
   time = ["09:00","12:00","15:00","18:00"].sample
   Match.create!(location: '123 Main St SF, CA',
    date: "2016-#{mth}-#{date} #{time}",
-   sport_id: rand(1..8))
+   sport_id: rand(1..20))
 end
 
 
@@ -451,6 +460,8 @@ Match.where(sport_id:8).each do |match|
   end
 end
 
+
+
 100.times do
  i = rand(0..9)
  user = User.create!(first_name: Faker::Name.first_name,
@@ -463,6 +474,6 @@ end
   phone: Faker::PhoneNumber.phone_number,
   password: "password",
   )
- sport_id = rand(1..8)
+ sport_id = rand(1..20)
  Stat.create!(active: "true" , user_id: user.id, sport_id: sport_id , rating: rating.sample)
 end
