@@ -88,23 +88,23 @@ Sport.create!(category: "Ultimate Frisbee",name:"5 vs 5",
  )
 
 
-Stat.create!( user_id: 1, sport_id: 1 ,rating: 64)
-Stat.create!( user_id: 1, sport_id: 2 ,rating: 60)
-Stat.create!( user_id: 1, sport_id: 3 ,rating: 80)
-Stat.create!( user_id: 1, sport_id: 4 ,rating: 54)
+Stat.create!( user_id: 1, sport_id: 1 ,rating: 64, division: "Gold")
+Stat.create!( user_id: 1, sport_id: 2 ,rating: 60, division: "Gold")
+Stat.create!( user_id: 1, sport_id: 3 ,rating: 80, division: "Platinum")
+Stat.create!( user_id: 1, sport_id: 4 ,rating: 54, division: "Gold")
 Stat.create!( user_id: 1, sport_id: 5 ,rating: 48)
-Stat.create!( user_id: 1, sport_id: 6 ,rating: 52)
-Stat.create!( user_id: 1, sport_id: 7 ,rating: 64)
-Stat.create!( user_id: 1, sport_id: 8 ,rating: 60)
-Stat.create!( user_id: 1, sport_id: 9 ,rating: 62)
-Stat.create!( user_id: 1, sport_id: 10,rating: 54)
+Stat.create!( user_id: 1, sport_id: 6 ,rating: 52, division: "Gold")
+Stat.create!( user_id: 1, sport_id: 7 ,rating: 64, division: "Gold")
+Stat.create!( user_id: 1, sport_id: 8 ,rating: 60, division: "Gold")
+Stat.create!( user_id: 1, sport_id: 9 ,rating: 62, division: "Gold")
+Stat.create!( user_id: 1, sport_id: 10,rating: 54, division: "Gold")
 Stat.create!( user_id: 1, sport_id: 11,rating: 48)
 Stat.create!( user_id: 1, sport_id: 12,rating: 50)
-Stat.create!( user_id: 1, sport_id: 13,rating: 60)
-Stat.create!( user_id: 1, sport_id: 14,rating: 58)
-Stat.create!( user_id: 1, sport_id: 15,rating: 55)
-Stat.create!( user_id: 1, sport_id: 16,rating: 72)
-Stat.create!( user_id: 1, sport_id: 17,rating: 76)
+Stat.create!( user_id: 1, sport_id: 13,rating: 60, division: "Gold")
+Stat.create!( user_id: 1, sport_id: 14,rating: 58, division: "Gold")
+Stat.create!( user_id: 1, sport_id: 15,rating: 55, division: "Gold")
+Stat.create!( user_id: 1, sport_id: 16,rating: 72, division: "Platinum")
+Stat.create!( user_id: 1, sport_id: 17,rating: 76, division: "Platinum")
 Stat.create!( user_id: 1, sport_id: 18,rating: 44)
 Stat.create!( user_id: 1, sport_id: 19,rating: 46)
 
@@ -897,7 +897,7 @@ end
   password: "password"
   )
  sport_id = rand(1..19)
- Stat.create!(active: "true" , user_id: user.id, sport_id: 1 , rating: 64)
+ Stat.create!(active: "true" , user_id: user.id, sport_id: 1 , rating: 64, division: "Gold")
 end
 
 # 100.times do

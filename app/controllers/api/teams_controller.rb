@@ -18,6 +18,10 @@ class Api::TeamsController < ApplicationController
 				p"^"*20
 				p total_players
 				p"&"*20
+				p sport
+				p "~"*20
+				p Stat.where(active:"true",sport_id:params[:sport_id])
+				p "+"*20
 				p stat.division
 				active_stats = sport.stats.where(active:"true", division:stat.division)
 				p "*"*20
