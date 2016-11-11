@@ -94,10 +94,16 @@ Sport.create!(category: "Ultimate Frisbee",name:"5 vs 5",
 
 Stat.create!( user_id: 1, sport_id: 1 ,rating: 64)
 Stat.create!( user_id: 1, sport_id: 2 ,rating: 60)
-Stat.create!( user_id: 1, sport_id: 3 ,rating: 62)
+Stat.create!( user_id: 1, sport_id: 3 ,rating: 80)
 Stat.create!( user_id: 1, sport_id: 4 ,rating: 54)
 Stat.create!( user_id: 1, sport_id: 5 ,rating: 48)
 Stat.create!( user_id: 1, sport_id: 6 ,rating: 52)
+Stat.create!( user_id: 1, sport_id: 7 ,rating: 64)
+Stat.create!( user_id: 1, sport_id: 8 ,rating: 60)
+Stat.create!( user_id: 1, sport_id: 9 ,rating: 62)
+Stat.create!( user_id: 1, sport_id: 10 ,rating: 54)
+Stat.create!( user_id: 1, sport_id: 11,rating: 48)
+Stat.create!( user_id: 1, sport_id: 12,rating: 52)
 
 rating = (40..70).step(2).to_a
 150.times do
