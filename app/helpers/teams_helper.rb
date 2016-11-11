@@ -1,10 +1,10 @@
 module TeamsHelper
 	def assign_players(stats,total,sport,user_stat)
 		teams = limit_players(stats,total,user_stat)
-		# locations = location_results(teams,sport)
+		locations = location_results(teams,sport)
 		teams = Team.shuffle_rand_teams(teams,total)
-		# match = Match.create_match(sport.id,locations.sample)
-		match = Match.create_match(sport.id,'123 Main St SF, CA')
+		match = Match.create_match(sport.id,locations.sample)
+		# match = Match.create_match(sport.id,'123 Main St SF, CA')
 		if match.save
 			home = Team.create_teams("true",sport.id,match.id)
 			away = Team.create_teams("false",sport.id,match.id)
