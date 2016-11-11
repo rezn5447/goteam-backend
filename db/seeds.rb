@@ -884,7 +884,7 @@ Match.where(sport_id:19).each do |match|
   end
 end
 
-500.times do
+50.times do
  i = rand(0..9)
  user = User.create!(first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
@@ -897,5 +897,5 @@ end
   password: "password",
   )
  sport_id = rand(1..19)
- Stat.create!(active: "true" , user_id: user.id, sport_id: sport_id , rating: rating.sample)
+ Stat.create!(active: "true" , user_id: user.id, sport_id: 1 , rating: 64)
 end
