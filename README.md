@@ -1,6 +1,10 @@
 # GoTeam API Documentation
 
+![Alt text](./goteam.png)
+
 GoTeam is a decoupled web application that randomly assigns users into teams and allows them to play sports with each other in different locations.
+
+Each user has a division and rating which he/she will be able to play sports wit other users in the same division. The API will create match if there are enough users to play, in which location and date will be assigned. Users are able to update the match score after the match, the API will update the rating and division of the users automatically.
 
 The API implements an REST-like interface. Connections can be made with any HTTP or HTTPS enabled programming language.
 
@@ -407,7 +411,7 @@ Method: **Get**
 
 ###Update
 
-Update the score of the match.
+Update the score of the match. When the score is updated, the users' statistics will be updated also.
 
 ####Endpoint
 
