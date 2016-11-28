@@ -37,8 +37,9 @@ Rails.application.configure do
   # CREATE CORS HEADERS SO I CAN MAKE API REQUESTS FROM ANYWHERE
   config.action_dispatch.default_headers = {
     'Access-Control-Allow-Origin'   => '*',
-    'Access-Control-Allow-Methods'  => %w{GET POST OPTIONS}.join(","),
-    'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
+    'Access-Control-Allow-Methods'  =>  'POST, PUT, DELETE, GET, OPTIONS',
+    'Access-Control-Allow-Headers'  => 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+    'Access-Control-Request-Method' => 'POST, PUT, DELETE, GET, OPTIONS'
   }
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil

@@ -17,7 +17,13 @@ Rails.application.configure do
   config.public_file_server.headers = {
     'Cache-Control' => 'public, max-age=3600'
   }
-
+  
+  config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin'   => '*',
+    'Access-Control-Allow-Methods'  =>  'POST, PUT, DELETE, GET, OPTIONS',
+    'Access-Control-Allow-Headers'  => 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+    'Access-Control-Request-Method' => 'POST, PUT, DELETE, GET, OPTIONS'
+  }
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
