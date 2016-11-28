@@ -29,6 +29,7 @@ Rails.application.configure do
   # CREATE CORS HEADERS SO I CAN MAKE API REQUESTS FROM ANYWHERE
   config.action_dispatch.default_headers = {
     'Access-Control-Allow-Origin'   => 'http://localhost:3000',
+    'Access-Control-Allow-Methods'  => %w{GET POST OPTIONS}.join(","),
     'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
   }
   # Don't care if the mailer can't send.
